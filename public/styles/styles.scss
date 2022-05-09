@@ -1,9 +1,276 @@
-body {
-    // background: blue;
-    // color: yellow;
-    font-family: 'Comic Sans MS', sans-serif;
-}
+// body {
+//     background: blue;
+//     color: yellow;
+//     font-family: 'Comic Sans MS', sans-serif;
+// }
 
-h1 {
-    color: white;
+// h1 {
+//     color: white;
+// }
+*{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+a,a:hover,a:active,a:link{
+	text-decoration: none;
+	color: #333;
+}
+img{
+	display: block;
+}
+input,button{
+    border: 0;
+    outline: 0;
+}
+@font-face {
+    font-family: "Karla";
+    src: url("../fonts/Karla-Regular-webfont.ttf");
+}
+@font-face {
+    font-family: "Archivo";
+    src: url("../fonts/Archivo-Regular.ttf");
+}
+.box{
+	width: 100%;
+    height: 100vh;
+    overflow-y: auto;
+    position: relative;
+    font-family: 'Karla';
+}
+.bLine{
+    border-bottom: 1px solid #E6ECF0;
+}
+.bj1{
+    background: #FFE8F3;
+}
+.bj2{
+    background: #DCFFDF;
+}
+.bj3{
+    background: #FFDCE0;
+}
+.bj4{
+    background: #FFF6A9;
+}
+.bj5{
+    background: #E4E4E4;
+}
+.bj6{
+    background: #DCF0FF;
+}
+.bj7{
+    background: #CBDFD8;
+}
+.bj8{
+    background: #F6DCFF;
+}
+.boxP{
+    display: flex;
+    .leftBox{
+        width: 1.4rem;
+        height: 100%;
+        background: #fff url('../images/bj2.png') no-repeat center 82vh;
+        background-size: .87rem .55rem;
+        overflow: hidden;
+    }
+    .logo img{
+        width: 1.07rem;
+        margin: 0 auto;
+        margin-top: .09rem;
+    }
+    .rightBox{
+        flex: 1;
+        background: #E6ECF0 url('../images/bj1.png') no-repeat right bottom;
+        background-size: 60vw 34.5vw;
+        overflow-y: auto;
+    }
+    .taskBox{
+        width: 1.4rem;
+        height: .34rem;
+        border-radius: .06rem;
+        margin-left: .15rem;
+        box-shadow: -2.06198px 0.687328px 8.93526px rgba(0, 0, 0, 0.17);
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0 .28rem 0 .08rem;
+    }
+    .taskBox>div{
+        display: flex;
+    }
+    .taskBox>div img{
+        width: .16rem;
+        margin-right: .06rem;
+    }
+    .taskBox>div p{
+        font-size: .11rem;
+        font-weight: 700;
+    }
+    .taskBox>p{
+        width: .14rem;
+        height: .14rem;
+        border-radius: .04rem;
+        background: #1D2939;
+        text-align: center;
+        line-height: .14rem;
+        font-size: .08rem;
+        color: #fff;
+    }
+    .rightTopBox{
+        height: .65rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0 .3rem;
+        border-bottom: 1px solid #e4e4e4;
+    }
+    .searchBox{
+        width: 3.2rem;
+        height: .32rem;
+        padding: 0 .14rem;
+        background: #FFFFFF;
+        box-shadow: inset 0px 2.06198px 7.56061px rgba(0, 0, 0, 0.25);
+        border-radius: 2.7rem;
+        display: flex;
+        align-items: center;
+    }
+    .searchBox img{
+        width: .16rem;
+    }
+    .searchBox input{
+        flex: 1;
+        height: 80%;
+        font-size: .11rem;
+        margin-left: .11rem;
+    }
+    .rightTopBtnBox{
+        display: flex;
+        button{
+            height: .3rem;
+            font-size: .13rem;
+            border-radius: .12rem;
+        }
+        .addTaskBtn{
+            width: .86rem;
+        }
+        .addColumnBtn{
+            width: 1rem;
+            margin-left: .1rem;
+            background: #87E4E4;
+        }
+    }
+    .rightCon{
+        display: flex;
+        justify-content: space-between;
+        padding: 0 .43rem;
+    }
+    .rightCon>div{
+        width: 2.2rem;
+    }
+    .titleBox{
+        display: flex;
+        margin-bottom: .2rem;
+        margin-top: .15rem;
+        h2{
+            height: .22rem;
+            line-height: .22rem;
+            background: #E1E4E8;
+            border-radius: .16rem;
+            color: #667085;
+            font-size: .13rem;
+            text-align: center;
+            padding: 0 .1rem;
+            margin-right: .05rem;
+        }
+        h2:nth-child(2){
+            width: .22rem;
+            padding: 0;
+        }
+    }
+    .card{
+        width: 100%;
+        padding-bottom: .12rem;
+        // padding: 0 .14rem .12rem .14rem;
+        background: #FCFCFD;
+        box-shadow: 0px 0.687328px 10.3099px rgba(16, 24, 40, 0.08);
+        border-radius: .13rem;
+        margin-bottom: .13rem;
+        >div{
+            padding-left: .14rem;
+            padding-right: .14rem;
+        }
+    }
+    .cardTitle{
+        padding-top: .14rem;
+        h2{
+            font-size: .14rem;
+            line-height: .2rem;
+            color: #1D2939;
+        }
+        p{
+            font-size: .1rem;
+            color: #98A2B3;
+            line-height: 1.5;
+            margin-top: .04rem;
+        }
+    }
+    .cardCon{
+        padding: .06rem 0;
+        p{
+            font-style: italic;
+            font-weight: 500;
+            font-size: .095rem;
+            line-height: 1.5;
+            color: #98A2B3;
+            letter-spacing: -.02em;
+        }
+        img{
+            width: 100%;
+            margin-top: .1rem;
+        }
+    }
+    .cardIcon{
+        display: flex;
+        padding-bottom: .08rem;
+        margin-top: .1rem;
+        .iconBox{
+            display: flex;
+            align-items: center;
+            color: #98A2B3;
+            font-size: .1rem;
+            line-height: .12rem;
+            margin-right: .1rem;
+            img{
+                width: .12rem;
+                height: .12rem;
+                margin-right: .04rem;
+            }
+            p{
+                width: .7rem;
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+            }
+        }
+    }
+    .tagBox{
+        display: flex;
+        // justify-content: space-between;
+        margin-top: .1rem;
+        p{
+            height: .16rem;
+            border-radius: .06rem;
+            padding: 0 .06rem;
+            line-height: .16rem;
+            font-size: .1rem;
+            color: #4D4D4D;
+            font-family: "Archivo";
+            letter-spacing: -0.003rem;
+            margin-right: .055rem;
+        }
+        p:last-child{
+            margin-right: 0;
+        }
+    }
 }
