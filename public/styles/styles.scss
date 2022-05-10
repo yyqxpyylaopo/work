@@ -71,6 +71,12 @@ width: 0 !important;height: 0;
 .bj8{
     background: #F6DCFF;
 }
+#music{
+    // display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
 .boxP{
     display: flex;
     .leftBox{
@@ -333,6 +339,7 @@ width: 0 !important;height: 0;
         }
     }
     .musicMinBox{
+        cursor: pointer;
         width: 2.84rem;
         height: 1rem;
         background: #FFFFFF;
@@ -368,6 +375,7 @@ width: 0 !important;height: 0;
                     letter-spacing: -.015em;
                     color: #1A1C21;
                     opacity: .6;
+                    margin-top: .02rem;
                 }
             }
             .musicBtn{
@@ -408,10 +416,10 @@ width: 0 !important;height: 0;
         }
     }      
     .musicStopBox{
-        display: none;
+        // display: none;
     }
     .musicStartBox{
-        // display: none;
+        display: none;
         .musicCon{
             display: flex;
             justify-content: center;
