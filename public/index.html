@@ -9,7 +9,7 @@
 </head>
 <body>
     <div class="box boxP">
-        <audio src="./music/California.mp3" id="music"></audio>
+        <audio controls src="./music/wyd.mp3" id="music"></audio>
         <div class="leftBox">
             <a href="" class="logo"><img src="./images/logo.png" alt=""></a>
             <div class="taskBox">
@@ -18,6 +18,19 @@
                     <p>Tasks</p>
                 </div>
                 <p>5</p>
+            </div>
+            <div class="taskBox timerBox">
+                <div>
+                    <img src="./images/timerIcon.png" alt="">
+                    <p>Timer</p>
+                </div>
+            </div>
+            <div class="taskBox musicBox">
+                <div>
+                    <img src="./images/userIcon.png" alt="">
+                    <p>Music</p>
+                </div>
+                <p>2</p>
             </div>
         </div>
         <div class="rightBox">
@@ -31,11 +44,15 @@
                     <button class="addColumnBtn">Add Column</button>
                 </div>
             </div>
+            <div class="screenBox">
+                <img src="./images/screenIcon.png" alt="">
+                <p>Categorie by Completion status</p>
+            </div>
             <div class="rightCon">
                 <div class="notStartBox">
                     <div class="titleBox bLine">
                         <h2>Not started</h2>
-                        <h2>1</h2>
+                        <h2 class="num">1</h2>
                     </div>
                     <div class="card">
                         <div class="cardTitle bLine">
@@ -85,7 +102,7 @@
                 <div class="progressBox">
                     <div class="titleBox bLine">
                         <h2>In progress</h2>
-                        <h2>3</h2>
+                        <h2 class="num">3</h2>
                     </div>
                     <div class="card">
                         <div class="cardTitle bLine">
@@ -136,7 +153,7 @@
                 <div class="doneBox">
                     <div class="titleBox bLine">
                         <h2>Already done</h2>
-                        <h2>1</h2>
+                        <h2 class="num">1</h2>
                     </div>
                     <div class="card">
                         <div class="cardTitle bLine">
@@ -168,7 +185,7 @@
             <div class="timeTask stopTime">
                  <h2>Project 1.</h2>
                  <div class="timeBox">
-                     <img src="./images/Vector.png" alt="">
+                     <img src="./images/playMin.png" alt="">
                      <h2>03:56</h2>
                  </div>
             </div>
@@ -181,15 +198,15 @@
             <div class="musicMinBox musicStopBox">
                 <div class="musicCon">
                     <div class="musicText">
-                        <img src="./images/Album.png" alt="">
+                        <img class="musicAlbum" src="./images/Album.png" alt="">
                         <div>
-                            <h2>Makima (Remixed)</h2>
-                            <p>The ChainSaw man</p>
+                            <h2 class="musicName">Makima (Remixed)</h2>
+                            <p class="musicSinger">The ChainSaw man</p>
                         </div>
                     </div>
                     <div class="musicBtn">
                         <img class="musicMinLikeBtn" src="./images/Like.png " alt="">
-                        <img class="musicMinBtn" src="./images/Vector.png" alt="">
+                        <img class="musicMinBtn" src="./images/playMin.png" alt="">
                     </div>
                 </div>
                 <div class="preBox">
@@ -200,14 +217,14 @@
             <div class="musicMinBox musicStartBox">
                 <img class="close" src="./images/close.png" alt="">
                 <div class="musicCon">
-                    <img src="./images/Album.png" alt="">
+                    <img class="musicAlbum" src="./images/Album.png" alt="">
                     <div class="musicPlayBtn">
                         <img class="previous" src="./images/Previous.png " alt="">
                         <img class="pauseBig" src="./images/pauseBig.png " alt="">
                         <img class="next" src="./images/Next.png " alt="">
                     </div>
                     <div class="musicBtn">
-                        <img src="./images/Like.png " alt="">
+                        <img class="musicMinLikeBtn" src="./images/Like.png " alt="">
                     </div>
                 </div>
                 <div class="preBox">
@@ -224,13 +241,13 @@
                     <input type="text" placeholder="Find your song...">
                 </div>
                 <div class="musicCon bLine">
-                    <img src="./images/Album.png" alt="">
+                    <img class="musicAlbum" src="./images/Album.png" alt="">
                     <div class="musicFrom">
                         <div>
-                            <h2>Makima (Remixed)</h2>
-                            <p>The ChainSaw man</p>
+                            <h2 class="musicName">Makima (Remixed)</h2>
+                            <p class="musicSinger">The ChainSaw man</p>
                         </div>
-                        <img src="./images/Like.png " alt="">
+                        <img class="musicMinLikeBtn" src="./images/Like.png " alt="">
                     </div>
                     <div class="preBox">
                         <div class="nowPre"></div>
@@ -240,7 +257,7 @@
                         <img class="suiji" src="./images/Shuffle.png" alt="">
                         <div class="musicPlayBtn">
                             <img class="previous" src="./images/Previous.png " alt="">
-                            <img class="pauseBig" src="./images/pauseBig.png " alt="">
+                            <img class="pauseBig" src="./images/playBig.png " alt="">
                             <img class="next" src="./images/Next.png " alt="">
                         </div>
                         <img class="share" src="./images/Share.png" alt="">
@@ -249,7 +266,7 @@
                 <div class="playBox">
                     <h2>Playlist</h2>
                     <div class="playList">
-                        <div class="playItem">
+                        <!-- <div class="playItem">
                             <div class="playCon">
                                 <img src="./images/Album.png" >
                                 <div class="playItemTitle">
@@ -259,7 +276,7 @@
                             </div>
                             <div class="playBtn">
                                 <img class="playBtnXin" src="./images/Like.png" >
-                                <img class="playBtnPlay" src="./images/Vector.png" >
+                                <img class="playBtnPlay" src="./images/playMin.png" >
                             </div>
                         </div>
                         <div class="playItem">
@@ -272,9 +289,9 @@
                             </div>
                             <div class="playBtn">
                                 <img class="playBtnXin" src="./images/Like.png" >
-                                <img class="playBtnPlay" src="./images/Vector.png" >
+                                <img class="playBtnPlay" src="./images/playMin.png" >
                             </div>
-                        </div>
+                        </div> -->
                     </div>
                 </div>
             </div>
@@ -282,6 +299,6 @@
     </div>
     <script src="./js/jquery.js"></script>
     <script src="./js/common.js?v=1"></script>
-    <script src="./js/music.js"></script>
+    <script type="module" src="./js/music.js"></script>
 </body>                  
 </html>

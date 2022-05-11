@@ -6,7 +6,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "nodemon server.js",
     "prestart": "parcel build ./public/index.html",
-    "dev": "parcel serve ./public/index.html"
+    "dev": "parcel serve ./public/index.html --no-cache"
   },
   "repository": {
     "type": "git",
@@ -25,5 +25,9 @@
   "devDependencies": {
     "@parcel/transformer-sass": "^2.4.1",
     "parcel": "^2.4.1"
+  },
+  "staticFiles": {
+    "staticPath": "public",
+    "watcherGlob": "**"
   }
 }

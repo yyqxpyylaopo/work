@@ -72,7 +72,7 @@ width: 0 !important;height: 0;
     background: #F6DCFF;
 }
 #music{
-    // display: none;
+    display: none;
     position: absolute;
     top: 0;
     left: 0;
@@ -110,14 +110,19 @@ width: 0 !important;height: 0;
     }
     .taskBox>div{
         display: flex;
+        align-items: center;
     }
     .taskBox>div img{
         width: .16rem;
+        height: .16rem;
         margin-right: .06rem;
     }
     .taskBox>div p{
+        height: .34rem;
         font-size: .11rem;
+        line-height: .34rem;
         font-weight: 700;
+        color: #1D2939;
     }
     .taskBox>p{
         width: .14rem;
@@ -128,6 +133,21 @@ width: 0 !important;height: 0;
         line-height: .14rem;
         font-size: .08rem;
         color: #fff;
+    }
+    .timerBox{
+        margin-top: .06rem;
+    }
+    .timerBox,.musicBox{
+        background: none;
+        box-shadow: none;
+        div p{
+            color: #667085;
+        }
+        >p{
+            background: none;
+            color: #344054;
+            font-size: .1rem;
+        }
     }
     .rightTopBox{
         height: .65rem;
@@ -170,6 +190,24 @@ width: 0 !important;height: 0;
             width: 1rem;
             margin-left: .1rem;
             background: #87E4E4;
+        }
+    }
+    .screenBox{
+        display: flex;
+        align-items: center;
+        margin-top: .4rem;
+        margin-bottom: .25rem;
+        padding: 0 .43rem;
+        img{
+            width: .25rem;
+            height: .18rem;
+            margin-right: .15rem;
+        }
+        p{
+            font-weight: 700;
+            font-size: .14rem;
+            color: #667085;
+            letter-spacing: -0.002rem;
         }
     }
     .rightCon{
@@ -268,8 +306,9 @@ width: 0 !important;height: 0;
     }
     .tagBox{
         display: flex;
+        flex-wrap: wrap;
         // justify-content: space-between;
-        margin-top: .1rem;
+        // margin-top: .1rem;
         p{
             height: .16rem;
             border-radius: .06rem;
@@ -280,9 +319,13 @@ width: 0 !important;height: 0;
             font-family: "Archivo";
             letter-spacing: -0.003rem;
             margin-right: .055rem;
+            margin-top: .1rem;
         }
         p:last-child{
             margin-right: 0;
+        }
+        p.searched{
+            border: 1px solid #f00;
         }
     }
     .timeTask{
@@ -414,6 +457,21 @@ width: 0 !important;height: 0;
             left: 30%;
             top: -.012rem;
         }
+        .playedTime{
+            font-size: .12rem;
+            line-height: 1;
+            color: #667085;
+            position: absolute;
+            left: 0;
+            top: -.17rem;
+        }
+        .noplayedTime{
+            font-size: .12rem;
+            color: #667085;
+            position: absolute;
+            right: 0;
+            top: -.17rem;
+        }
     }      
     .musicStopBox{
         // display: none;
@@ -457,6 +515,7 @@ width: 0 !important;height: 0;
         position: absolute;
         top: .16rem;
         right: .16rem;
+        cursor: pointer;
     }
     .musicMaxBox{
         display: none;
@@ -543,6 +602,7 @@ width: 0 !important;height: 0;
                 height: .22rem;
             }
             .musicPlayBtn{
+                cursor: pointer;
                 display: flex;
                 align-items: center;
                 .previous,.next{
@@ -566,6 +626,13 @@ width: 0 !important;height: 0;
             }
             .playList{
                 margin-top: .08rem;
+            }
+            .empty{
+                text-align: center;
+                font-size: .12rem;
+                color: #1A1C21;
+                opacity: .7;
+                line-height: .2rem;
             }
             .playItem{
                 display: flex;
