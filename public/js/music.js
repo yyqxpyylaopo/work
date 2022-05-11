@@ -70,7 +70,7 @@ function playMusic(){
 }
 function pauseMusic(){
 	$("#music")[0].pause();
-	$(".musicMinBtn").attr('src','img/pause1.png');
+	$(".musicMinBtn").attr('src','./images/pause1.png');
 	// setTimeout(()=>{
 		duration = parseInt($("#music")[0].duration);
 		// console.log(duration);
@@ -137,16 +137,16 @@ $(".musicMinBtn").click(()=>{
 		playMusic();
 	}else{
 		$("#music")[0].pause();
-		$(".musicMinBtn").attr('src','img/play1.png')
+		$(".musicMinBtn").attr('src','./images/play1.png')
 	}
 })
 $(".musicMinXin").click(()=>{
-	if($(".musicMinXin").attr('src')=='img/xin.png'){
+	if($(".musicMinXin").attr('src')=='./images/xin.png'){
 		localStorage.setItem(nowMusic.id,JSON.stringify(nowMusic));
-		$(".musicMinXin").attr('src','img/xined.png')
+		$(".musicMinXin").attr('src','./images/xined.png')
 	}else{
 		localStorage.removeItem(nowMusic.id);
-		$(".musicMinXin").attr('src','img/xin.png')
+		$(".musicMinXin").attr('src','./images/xin.png')
 	}
 })
 $(".musicMinprogress").click(()=>{
@@ -158,9 +158,9 @@ function renderMaxMusic(){
 	$(".musicMaxTitle p").html(nowMusic.singer);
 	$(".musicMaxImg").attr('src',nowMusic.img)
 	if(localStorage.getItem(nowMusic.id)){
-		$(".musicMaxXin").attr('src','img/xined.png')
+		$(".musicMaxXin").attr('src','./images/xined.png')
 	}else{
-		$(".musicMaxXin").attr('src','img/xin.png')
+		$(".musicMaxXin").attr('src','./images/xin.png')
 	}
 	$("#music").attr('src',nowMusic.url);
 }
@@ -178,11 +178,11 @@ function renderPlayList(){
 					</div>
 					<div class="playBtn">`
 		if(localStorage.getItem(item.id)){
-			html+=`<img class="playBtnXin" src="img/xined.png" >`
+			html+=`<img class="playBtnXin" src="./images/xined.png" >`
 		}else{
-			html+=`<img class="playBtnXin" src="img/xin.png" >`
+			html+=`<img class="playBtnXin" src="./images/xin.png" >`
 		}
-		html+=`<img class="playBtnPlay" src="img/play1.png" >
+		html+=`<img class="playBtnPlay" src="./images/play1.png" >
 				</div>
 			</div>`
 	})
