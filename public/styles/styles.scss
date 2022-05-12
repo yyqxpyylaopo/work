@@ -79,6 +79,11 @@ width: 0 !important;height: 0;
 }
 .boxP{
     display: flex;
+}
+.boxM{
+    display: none;
+}
+.box{
     .leftBox{
         width: 1.4rem;
         height: 100%;
@@ -140,6 +145,7 @@ width: 0 !important;height: 0;
     .timerBox,.musicBox{
         background: none;
         box-shadow: none;
+        display: none;
         div p{
             color: #667085;
         }
@@ -182,6 +188,7 @@ width: 0 !important;height: 0;
             height: .3rem;
             font-size: .13rem;
             border-radius: .12rem;
+            transition: all .2s ease-in-out;
         }
         .addTaskBtn{
             width: .86rem;
@@ -191,9 +198,13 @@ width: 0 !important;height: 0;
             margin-left: .1rem;
             background: #87E4E4;
         }
+        button.smaller{
+            transform: scale(.8);
+        }
     }
     .screenBox{
-        display: flex;
+        display: none;
+        // display: flex;
         align-items: center;
         margin-top: .4rem;
         margin-bottom: .25rem;
@@ -361,9 +372,10 @@ width: 0 !important;height: 0;
         }
     }
     .stopTime{
-        display: none;
+        // display: none;
     }
     .startTime{
+        display: none;
         width: 1.76rem;
         bottom: -.56rem;
         padding: .1rem .18rem;
@@ -379,6 +391,29 @@ width: 0 !important;height: 0;
                 // line-height: .39rem;
                 font-weight: 400;
             }
+        }
+    }
+    .timeMaxTask{
+        display: none;
+        padding: 0;
+        padding-top: .12rem;
+        .timeTitle{
+            padding-bottom: .07rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: #1A1C21;
+            letter-spacing: -0.035em;
+            font-size: .11rem;
+            img{
+                width: .13rem;
+                height: .13rem;
+                margin-right: .08rem;
+            }
+        }
+        .timeBox{
+            justify-content: center;
+            margin-top: .03rem;
         }
     }
     .musicMinBox{
@@ -671,6 +706,86 @@ width: 0 !important;height: 0;
                 width: .17rem;
                 height: .17rem;
                 margin-left: .1rem;
+            }
+        }
+    }
+    .mobileTopBox{
+        width: 100%;
+        box-shadow: 0px -2.06077px 17.86px rgba(0, 0, 0, 0.25);
+    }
+    .moblieUser{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: .2rem .33rem;
+        div{
+            display: flex;
+            align-items: center;
+            img{
+                width: .15rem;
+                height: .15rem;
+                margin-right: .18rem;
+            }
+            h2{
+                font-size: .2rem;
+            }
+        }
+        >img{
+            width: .3rem;
+            height: .3rem;
+            border-radius: 50%;
+        }
+    }
+    .navBox{
+        margin: 0 .33rem;
+        height: .6rem;
+        background: #FF9A61;
+        border-radius: .13rem;
+        padding: 0 .08rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        box-sizing: border-box;
+        p{
+            color: #fff;
+            width: 33.3%;
+            height: .42rem;
+            border-radius: .13rem;
+            font-size: .13rem;
+            text-align: center;
+            line-height: .41rem;
+            font-weight: 700;
+        }
+        p.active{
+            background: #fff;
+            color: #FF9A61;
+        }
+    }
+    .mScreenBox{
+        margin: 0 .33rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0.22rem .07rem;
+        >h2{
+            font-size: .18rem;
+        }
+        div{
+            display: flex;
+            align-items: center;
+            img{
+                width: .134rem;
+                height: .134rem;
+            }
+            button{
+                width: .5rem;
+                height: .3rem;
+                background: #FF9A61;
+                border-radius: .13rem;
+                background: #FF9A61;
+                color: #fff;
+                font-weight: 700;
+                margin-left: .18rem;
             }
         }
     }

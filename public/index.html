@@ -6,10 +6,35 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>StudBud</title>
     <link rel="stylesheet" href="styles/styles.scss" />
+    <link rel="stylesheet" href="styles/media.scss">
 </head>
 <body>
+    <div class="box boxM">
+        <div class="mobileTopBox">
+            <div class="moblieUser">
+                <div>
+                    <img src="./images/menuIcon.png" alt="">
+                    <h2>Kanban board</h2>
+                </div>
+                <img src="./images/avator.png" alt="">
+            </div>
+            <div class="navBox">
+                <p class="active">Not Started</p>
+                <p>In progress</p>
+                <p>Already done</p>
+            </div>
+            <div class="mScreenBox">
+                <h2>Categories</h2>
+                <div>
+                    <img src="./images/filterIcon.png" alt="">
+                    <button>Add</button>
+                </div>
+            </div>
+        </div>
+    </div>
     <div class="box boxP">
         <audio controls src="./music/wyd.mp3" id="music"></audio>
+        
         <div class="leftBox">
             <a href="" class="logo"><img src="./images/logo.png" alt=""></a>
             <div class="taskBox">
@@ -190,8 +215,18 @@
                  </div>
             </div>
             <div class="timeTask startTime">
-                <div class="timeBox">
+                <div class="timeBox bLine">
                     <img src="./images/timeStartIcon.png" alt="">
+                    <h2>03:56</h2>
+                </div>
+            </div>
+            <div class="timeTask timeMaxTask">
+                <div class="timeTitle bLine">
+                    <img src="./images/clock.png" alt="">
+                    <p>Pomodoro</p>
+                </div>
+                <div class="timeBox">
+                    <img src="./images/Vector1.png" alt="">
                     <h2>03:56</h2>
                 </div>
             </div>
@@ -266,32 +301,7 @@
                 <div class="playBox">
                     <h2>Playlist</h2>
                     <div class="playList">
-                        <!-- <div class="playItem">
-                            <div class="playCon">
-                                <img src="./images/Album.png" >
-                                <div class="playItemTitle">
-                                    <h2>11111</h2>
-                                    <p>222222222</p>
-                                </div>
-                            </div>
-                            <div class="playBtn">
-                                <img class="playBtnXin" src="./images/Like.png" >
-                                <img class="playBtnPlay" src="./images/playMin.png" >
-                            </div>
-                        </div>
-                        <div class="playItem">
-                            <div class="playCon">
-                                <img src="./images/Album.png" >
-                                <div class="playItemTitle">
-                                    <h2>11111</h2>
-                                    <p>222222222</p>
-                                </div>
-                            </div>
-                            <div class="playBtn">
-                                <img class="playBtnXin" src="./images/Like.png" >
-                                <img class="playBtnPlay" src="./images/playMin.png" >
-                            </div>
-                        </div> -->
+                       
                     </div>
                 </div>
             </div>
@@ -300,5 +310,6 @@
     <script src="./js/jquery.js"></script>
     <script src="./js/common.js?v=1"></script>
     <script type="module" src="./js/music.js"></script>
+    <script src="./js/index.js"></script>
 </body>                  
 </html>

@@ -183,12 +183,14 @@ $(".musicAlbum").click(()=>{
 	$(".musicStopBox").css("display","none")
 	$(".musicStartBox").css("display","none");
 	$(".musicMaxBox").css("display","block");
+	$(".musicBox").css("display","flex");
 })
 $(".close").click(()=>{
 	pauseMusic();
 	$(".musicStopBox").css("display","block")
 	$(".musicStartBox").css("display","none");
 	$(".musicMaxBox").css("display","none");
+	$(".musicBox").css("display","none");
 })
 $(".musicMaxBox .searchBox input").on('input',function(e){
 	searchMusic=[];
@@ -207,7 +209,7 @@ $(".rightTopBox .searchBox input").on('input',function(e){
 	console.log(text)
 })
 document.onkeydown = function(event){
-	console.log(event);
+	// console.log(event);
 	// if(!text){
 	// 	$(".tagBox p").removeClass("searched");
 	// 	$(".notStartBox .num").html($(".notStartBox .card:visible").length)
@@ -216,6 +218,9 @@ document.onkeydown = function(event){
 	// 	return;
 	// }
 	if(event.keyCode == 13){
+		if(text){
+			$(".screenBox").css("display","flex")
+		}
 		let cards = $(".card");
 		for (let i = 0; i < cards.length; i++) {
 			let card = cards.eq(i);
@@ -223,6 +228,7 @@ document.onkeydown = function(event){
 			let searched=false;
 			for (let j = 0; j < tags.length; j++) {
 				let tag = tags.eq(j);
+				console.log(tag.html().indexOf(text))
 				if(tag.html().indexOf(text) != -1){
 					if(text){
 						searched=true;
@@ -230,15 +236,20 @@ document.onkeydown = function(event){
 					}else{
 						searched=false;
 						tag.removeClass("searched")
+						card.css("display",'block')
 					}
 				}else{
 					tag.removeClass("searched")
 				}
 			}
-			if(searched){
-				card.css("display",'block')
+			if(text){
+				if(searched){
+					card.css("display",'block')
+				}else{
+					card.css("display",'none')
+				}
 			}else{
-				card.css("display",'none')
+				$(".screenBox").css("display","none")
 			}
 		}
 		$(".notStartBox .num").html($(".notStartBox .card:visible").length)

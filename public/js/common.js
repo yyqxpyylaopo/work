@@ -1,9 +1,12 @@
 ; (function (win) {
     var tid
     function refreshRem() {
-        let designSize = 1000 // 设计图尺寸
         let html = document.documentElement
         let wW = html.clientWidth // 窗口宽度
+        let designSize = 1000 // 设计图尺寸
+        if(wW<=1000){
+            designSize=310
+        }
         let rem = (wW * 100) / designSize
         document.documentElement.style.fontSize = rem + 'px'
     }
@@ -62,4 +65,53 @@ function formatSeconds(second){//秒转换成时分秒
     var result = mm + ":" + ss;
     // console.log(second + " => " + result);
     return result;
+}
+$(".rightTopBtnBox button").click(function(){
+    $(this).addClass('smaller');
+    setTimeout(()=>{
+        $(this).removeClass('smaller');
+    },200)
+})
+let pomodoroTime=300;
+let taskTimer=null;
+console.log(pomodoroTime)
+$(".timeBox h2").html(formatSeconds(pomodoroTime));
+$(".timeTask").click(function(){
+    $(".stopTime").css("display","none")
+    $(".startTime").css("display","none")
+    $(".timeMaxTask").css("display","block")
+})
+$(".stopTime img").click(function(e){
+    e.stopPropagation();
+    $(".stopTime").css("display","none")
+    $(".startTime").css("display","block")
+    $(".timeMaxTask").css("display","none")
+    startTask();
+})
+$(".startTime img").click(function(e){
+    e.stopPropagation();
+    $(".stopTime").css("display","block")
+    $(".startTime").css("display","none")
+    $(".timeMaxTask").css("display","none")
+    stopTask();
+})
+
+function startTask(){
+    taskTimer && clearInterval(taskTimer)
+    let time=pomodoroTime;
+    taskTimer=setInterval(()=>{
+        time--;
+        if(time<=0){
+            time=pomodoroTime;
+            stopTask();
+        }
+        $(".stopTime .timeBox h2").html(formatSeconds(time))
+        $(".startTime .timeBox h2").html(formatSeconds(time))
+    })
+}
+function stopTask(){
+    clearInterval(taskTimer);
+    $(".stopTime").css("display","block")
+    $(".startTime").css("display","none")
+    $(".timeMaxTask").css("display","none")
 }
