@@ -208,13 +208,13 @@ $(".rightTopBox .searchBox input").on('input',function(e){
 })
 document.onkeydown = function(event){
 	console.log(event);
-	if(!text){
-		$(".tagBox p").removeClass("searched");
-		$(".notStartBox .num").html($(".notStartBox .card:visible").length)
-		$(".progressBox .num").html(($(".progressBox .card:visible").length))
-		$(".doneBox .num").html($(".doneBox .card:visible").length)
-		return;
-	}
+	// if(!text){
+	// 	$(".tagBox p").removeClass("searched");
+	// 	$(".notStartBox .num").html($(".notStartBox .card:visible").length)
+	// 	$(".progressBox .num").html(($(".progressBox .card:visible").length))
+	// 	$(".doneBox .num").html($(".doneBox .card:visible").length)
+	// 	return;
+	// }
 	if(event.keyCode == 13){
 		let cards = $(".card");
 		for (let i = 0; i < cards.length; i++) {
@@ -224,8 +224,13 @@ document.onkeydown = function(event){
 			for (let j = 0; j < tags.length; j++) {
 				let tag = tags.eq(j);
 				if(tag.html().indexOf(text) != -1){
-					searched=true;
-					tag.addClass("searched")
+					if(text){
+						searched=true;
+						tag.addClass("searched")
+					}else{
+						searched=false;
+						tag.removeClass("searched")
+					}
 				}else{
 					tag.removeClass("searched")
 				}
