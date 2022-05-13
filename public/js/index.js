@@ -1,5 +1,19 @@
 $(document).ready(function(){
+    let mNavIndex=0;
+    $(".navBox p").click(function(){
+        console.log($(this).index())
+        mNavIndex=$(this).index();
+        $(".navBox p").removeClass("active")
+        $(this).addClass("active")
+        renderMCard();
+    })
     $(".rightTopBtnBox button").click(function () {
+        $(this).addClass('smaller');
+        setTimeout(() => {
+            $(this).removeClass('smaller');
+        }, 200)
+    })
+    $(".mScreenBox button").click(function () {
         $(this).addClass('smaller');
         setTimeout(() => {
             $(this).removeClass('smaller');
@@ -42,7 +56,6 @@ $(document).ready(function(){
         $(".timerBox").css("display", "none")
         stopTask();
     })
-
     function startTask() {
         taskTimer && clearInterval(taskTimer)
         let time = pomodoroTime;
@@ -62,4 +75,30 @@ $(document).ready(function(){
         $(".startTime").css("display", "none")
         $(".timeMaxTask").css("display", "none")
     }
+    function renderMCard(){
+        $(".rightCon>div .card").css("display","none")
+        $(".rightCon>div").eq(mNavIndex).find(".card").css("display","block")
+    }
+
+
+
+    $(".mobileMenu div").click(function(){
+        let index = $(this).index();
+        console.log(index)
+        $(".mobileMenu>div").removeClass("active");
+        $(this).addClass("active");
+        if(index == 0){
+            $(".clockWatchBox").css("display","none")
+            $(".mobileMusicMaxBox").css("display","block")
+        }else{
+            $(".mobileMusicMaxBox").css("display","none")
+            $(".clockWatchBox").css("display","flex")
+        }
+    })
+    $(".clockNext").click(function(){
+        let show = $(this).attr("show");
+        $(".clockMaxBox").css("display","none");
+        $("."+show).css("display","flex");
+        console.log($(this),show,$("."+show))
+    })
 })

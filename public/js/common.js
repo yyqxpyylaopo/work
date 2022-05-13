@@ -5,7 +5,7 @@
         let wW = html.clientWidth // 窗口宽度
         let designSize = 1000 // 设计图尺寸
         if(wW<=1000){
-            designSize=310
+            designSize=370
         }
         let rem = (wW * 100) / designSize
         document.documentElement.style.fontSize = rem + 'px'

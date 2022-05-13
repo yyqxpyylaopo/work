@@ -82,6 +82,7 @@ width: 0 !important;height: 0;
 }
 .boxM{
     display: none;
+    height: auto;
 }
 .box{
     .leftBox{
@@ -198,9 +199,9 @@ width: 0 !important;height: 0;
             margin-left: .1rem;
             background: #87E4E4;
         }
-        button.smaller{
-            transform: scale(.8);
-        }
+    }
+    .smaller{
+        transform: scale(.8);
     }
     .screenBox{
         display: none;
@@ -711,6 +712,7 @@ width: 0 !important;height: 0;
     }
     .mobileTopBox{
         width: 100%;
+        margin-bottom: .06rem;
         box-shadow: 0px -2.06077px 17.86px rgba(0, 0, 0, 0.25);
     }
     .moblieUser{
@@ -786,7 +788,372 @@ width: 0 !important;height: 0;
                 color: #fff;
                 font-weight: 700;
                 margin-left: .18rem;
+                transition: all .2s ease-in-out;
             }
         }
+    }
+    .mobileMenuBox{
+        position: fixed;
+        bottom: .27rem;
+        left: 50%;
+        transform: translateX(-50%);
+        z-index: 100;
+    }
+    .mobileMenu{
+        width: 1.15rem;
+        height: .58rem;
+        background: linear-gradient(255.53deg, rgba(0, 0, 0, 0.1) 4.39%, rgba(0, 0, 0, 0) 96.42%), #FF9A61;
+        box-shadow: inset 0px 1.15305px 1.15305px rgba(255, 255, 255, 0.25);
+        border-radius: .13rem;
+        padding: 0 .08rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-end;
+        padding-bottom: .12rem;
+        >div{
+            width: .42rem;
+           height: .42rem;
+           display: flex;
+           justify-content: center;
+           align-items: flex-end;
+           padding-bottom: .04rem;
+           img:nth-child(1){
+                display: block;
+            }
+           img:nth-child(2){
+               display: none;
+           }
+        }
+        .active{
+            height: .62rem;
+            background: #FFFFFF;
+            box-shadow: 0px 1.3186px 9.2302px rgba(0, 0, 0, 0.25);
+            border-radius: .12rem;
+            img:nth-child(1){
+                display: none;
+            }
+           img:nth-child(2){
+               display: block;
+           }
+        }
+        img{
+             width: .26rem;
+             height: .26rem;
+        }
+    }
+    .mobileMenuGray{
+        display: none;
+        width: 1.31rem;
+        height: .05rem;
+        background: #D7D7D7;
+        border-radius: .05rem;
+        position: absolute;
+        bottom: -.03rem;
+        left: -.09rem;
+        z-index: -10;
+    }
+    .mobileMenuBoxHide{
+        bottom: .07rem;
+        .mobileMenu{
+            width: 1.13rem;
+            height: .1rem;
+            overflow: hidden;
+            >div{
+                display: none;
+            }
+        }
+        .mobileMenuGray{
+            display: block;
+        }
+    }
+    .mobileMusicBox{
+        display: none;
+        width:  calc(100% - .2rem);
+        height: .84rem;
+        background: #fff;
+        border: 1px solid #EEEEEE;
+        box-shadow: 0px 8.93002px 14.4254px rgba(16, 24, 40, 0.13);
+        border-radius: .21rem;
+        position: fixed;
+        bottom: .26rem;
+        left: 50%;
+        transform: translateX(-50%);
+        // display: flex;
+        align-items: center;
+        padding: 0 .2rem;
+        z-index: 100;
+        >img{
+            width: .58rem;
+            height: .58rem;
+            margin-left: .2rem;
+            border-radius: .2rem;
+            flex-shrink: 0;
+        }
+        .musicCon{
+            flex: 1;
+            height: 100%;
+            padding: .17rem 0 .13rem 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            .musicText{
+                display: flex;
+                >div:first{
+                    flex: 1
+                }
+                h2,p{
+                    width: 40vw;
+                    white-space: nowrap;
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+                }
+                h2{
+                    font-size: .15rem;
+                    line-height: .18rem;
+                    color: #1A1C21;
+                    letter-spacing: -0.035em;
+                    word-break: break-all;
+                }
+                p{
+                    font-style: italic;
+                    font-weight: 700;
+                    font-size: .15rem;
+                    line-height: .18rem;
+                    letter-spacing: -0.015em;
+                    color: #1A1C21;
+                    opacity: .6;
+                    margin-top: .03rem;
+                }
+                .musicBtn{
+                    margin-left: .08rem;
+                    display: flex;
+                    align-items: center;
+                    img{
+                        width: .2rem;
+                        height: .2rem;
+                        margin-left: .1rem;
+                    }
+                    img:nth-child(1){
+                        margin-left: 0;
+                    }
+                }
+            }
+            .preBox{
+                height: .03rem;
+                opacity: .5;
+            }
+        }  
+    }
+    .mobileMusicMaxBox{
+        width:  calc(100% - .46rem);
+        height: calc(100vh - .98rem);
+        bottom: .9rem;
+        left: 50%;
+        transform: translateX(-50%);
+        z-index: 100;
+        border: 1px solid #EEEEEE;
+        box-shadow: 0px 0px 4px 1px rgba(0, 0, 0, 0.15);
+        padding-bottom: .1rem;
+    }
+    .mobileBottomBox{
+        display: none;
+        // display: flex;
+        width: calc(100% - .28rem);;
+        position: fixed;
+        bottom: .26rem;
+        left: 50%;
+        transform: translateX(-50%);
+        z-index: 100;
+        overflow: hidden;
+        overflow-x: auto;
+        >div{
+            margin-right: .09rem;
+        }
+        .mobileMusicBox{
+            display: flex;
+            width: 3.3rem;
+            height: 1.26rem;
+            border-radius: .31rem;
+            position: relative;
+            bottom: 0;
+            left: 0;
+            transform: translateX(0%);
+            >img{
+                width: .87rem;
+                height: .87rem;
+            }
+            .musicCon{
+                justify-content: center;
+                .musicText{
+                    h2,p{
+                        font-size: .13rem;
+                        line-height: .15rem;
+                    }
+                    p{
+                        margin-top: .09rem;
+                    }
+                }
+                .preBox{
+                    margin-top: .21rem;
+                }
+            }
+        }
+    }
+    .mobileTaskBox{
+        width: 1.74rem;
+        height: 1.26rem;
+        background: #fff;
+        border: 1px solid #EEEEEE;
+        box-shadow: 0px 8.93002px 14.4254px rgba(16, 24, 40, 0.13);
+        border-radius: .31rem;
+        display: flex;
+        .taskLeft{
+            width: .8rem;
+            background: #FF9A61;
+            border-radius: .31rem;
+            padding: .24rem 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-between;
+            font-size: .11rem;
+            line-height: .13rem;
+            // box-sizing: border-box;
+            img{
+                width: .54rem;
+                height: .54rem;
+            }
+        }
+        .taskRight{
+            width: .94rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-end;
+            >p{
+                font-weight: 600;
+                font-size: .28rem;
+                line-height: .34rem;
+                color: #FF9A61;
+                text-shadow: 0px 2.41176px 6.02941px rgba(0, 0, 0, 0.25);
+            }
+            .taskBtn{
+                width: 100%;
+                display: flex;
+                justify-content: space-between;
+                padding: 0 .21rem;
+                margin-bottom: .22rem;
+                margin-top: .27rem;
+                img{
+                    width: .13rem;
+                    height: .13rem;
+                }
+            }
+        }
+    }
+    .clockMaxBox{
+        display: none;
+        // display: flex;
+        width:  calc(100% - .46rem);
+        height: 3.94rem;
+        position: fixed;
+        bottom: .9rem;
+        left: 50%;
+        transform: translateX(-50%);
+        z-index: 100;
+        background: #fff;
+        border: 1px solid #EEEEEE;
+        box-shadow: 0px 0px 4px 1px rgba(0, 0, 0, 0.15);
+        border-radius: .12rem;
+        flex-direction: column;
+        .close{
+            width: .25rem;
+            height: .25rem;
+        }
+        .clockTitle{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding-bottom: .25rem;
+            padding-top: .46rem;
+            >img{
+                width: .12rem;
+                height: auto;
+                margin-left: .2rem;
+            }
+            div{
+                font-size: .26rem;
+                display: flex;
+                align-items: center;
+                img{
+                    width: .34rem;
+                    height: .34rem;
+                    margin-right: .1rem;
+                }
+            }
+        }
+        .clockTime{
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 0 .3rem;
+            h2{
+                font-size: .4rem;
+                line-height: .46rem;
+                color: #000;
+            }
+        }
+        .clockBtn{
+            width: 100%;
+            padding: 0 .37rem .32rem .37rem;
+            display: flex;
+            justify-content: space-between;
+            button{
+                width: 1rem;
+                height: .42rem;
+                border-radius: .21rem;
+                background: #FF9A61;
+                font-size: .14rem;
+                color: #34344A;
+                font-weight: 500;
+            }
+            button:nth-child(2){
+                background: #39393E;
+                color: #fff;
+            }
+        }
+    }
+    .clockWatchBox{
+        // display: flex;
+    }
+    .clockPomodoroBox{
+        // display: flex;
+        .clockTime{
+            h2{
+                color: #FF9A61;
+            }
+            p{
+                font-size: .1rem;
+                font-style: italic;
+                color: #1A1C21;
+                margin-top: .21rem;
+            }
+        }
+        .preBox{
+            background: #E5E5E5;
+            opacity: 0.5;
+            margin-top: .5rem;
+            .nowPre{
+                background: #1D2939;
+            }
+            .preDot{
+                width: .1rem;
+                height: .1rem;
+                top: -.042rem;
+            }
+        }
+        
     }
 }

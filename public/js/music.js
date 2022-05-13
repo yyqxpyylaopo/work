@@ -69,9 +69,11 @@ function renderMinMusic(){
 	$(".nowPre").css('width',0)
 	$(".preDot").css('left',0)
 }
-function playMusic(){
-	$(".musicStopBox").css("display","none")
-	$(".musicStartBox").css("display","block");
+function playMusic(type){
+	if(type!="mobile"){
+		$(".musicStopBox").css("display","none")
+		$(".musicStartBox").css("display","block");
+	}
 	$("#music")[0].play();
 	$(".pauseBig").attr('src',require('../images/pauseBig.png'));
 	$(".musicMinBtn").attr('src',require('../images/pauseMin.png'));
@@ -81,9 +83,11 @@ function playMusic(){
 		musicTimeInterval();
 	},200)
 }
-function pauseMusic(){
-	$(".musicStopBox").css("display","block")
-	$(".musicStartBox").css("display","none");
+function pauseMusic(type){
+	if(type!="mobile"){
+		$(".musicStopBox").css("display","block")
+		$(".musicStartBox").css("display","none");
+	}
 	$("#music")[0].pause();
 	$(".pauseBig").attr('src',require('../images/playBig.png'));
 	$(".musicMinBtn").attr('src',require('../images/playMin.png'));
@@ -155,12 +159,20 @@ $(".musicMinBtn").click(()=>{
 		pauseMusic();
 	}
 })
-$(".pauseBig").click(()=>{
-	console.log($("#music"))
+$(".pauseBig").click(function(){
+	let from = $(this).attr("from");
 	if($("#music")[0].paused){
-		playMusic();
+		if(from=="mobile"){
+			playMusic("mobile");
+		}else{
+			playMusic();
+		}
 	}else{
-		pauseMusic();
+		if(from=="mobile"){
+			pauseMusic("mobile");
+		}else{
+			pauseMusic();
+		}
 	}
 })
 $(".musicMinLikeBtn").click(()=>{
@@ -185,12 +197,20 @@ $(".musicAlbum").click(()=>{
 	$(".musicMaxBox").css("display","block");
 	$(".musicBox").css("display","flex");
 })
-$(".close").click(()=>{
-	pauseMusic();
-	$(".musicStopBox").css("display","block")
-	$(".musicStartBox").css("display","none");
-	$(".musicMaxBox").css("display","none");
-	$(".musicBox").css("display","none");
+$(".close").click(function(){
+	let from = $(this).attr("from")
+	if(from=='mobile'){
+        $(".mobileMenu>div").removeClass("active");
+		$(".mobileMusicMaxBox").css("display","none")
+		$(".clockWatchBox").css("display","none")
+		$(".clockPomodoroBox").css("display","none")
+	}else{
+		pauseMusic();
+		$(".musicStopBox").css("display","block")
+		$(".musicStartBox").css("display","none");
+		$(".musicMaxBox").css("display","none");
+		$(".musicBox").css("display","none");
+	}
 })
 $(".musicMaxBox .searchBox input").on('input',function(e){
 	searchMusic=[];
