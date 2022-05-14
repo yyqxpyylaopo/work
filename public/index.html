@@ -44,7 +44,7 @@
                 </div>
                 <div class="mobileMenuGray"></div>
             </div>
-            <div class="mobileMusicBox">
+            <div class="mobileMusicBox onlyMusicBox">
                 <div class="musicCon">
                     <div class="musicText">
                         <div>
@@ -56,14 +56,14 @@
                             <img class="musicMinBtn" src="./images/playMin.png" alt="">
                         </div>
                     </div>
-                    <div class="preBox">
+                    <div class="preBox musicPre">
                         <div class="nowPre"></div>
                         <div class="preDot"></div>
                     </div>
                 </div>
                 <img class="musicAlbum" src="./images/Album.png" alt="">
             </div>
-            <div class="musicMaxBox mobileMusicMaxBox" from="mobile">
+            <div class="musicMaxBox mobileMusicMaxBox">
                 <img class="close" src="./images/close.png" alt="">
                 <div class="searchBox">
                     <img src="./images/searchIcon.png" alt="">
@@ -78,7 +78,7 @@
                         </div>
                         <img class="musicMinLikeBtn" src="./images/Like.png " alt="">
                     </div>
-                    <div class="preBox">
+                    <div class="preBox musicPre">
                         <div class="nowPre"></div>
                         <div class="preDot"></div>
                     </div>
@@ -86,7 +86,7 @@
                         <img class="suiji" src="./images/Shuffle.png" alt="">
                         <div class="musicPlayBtn">
                             <img class="previous" src="./images/Previous.png " alt="">
-                            <img class="pauseBig" from="mobile" src="./images/playBig.png " alt="">
+                            <img class="pauseBig" src="./images/playBig.png " alt="">
                             <img class="next" src="./images/Next.png " alt="">
                         </div>
                         <img class="share" src="./images/Share.png" alt="">
@@ -99,8 +99,8 @@
                     </div>
                 </div>
             </div>
-            <div class="clockMaxBox clockWatchBox" from="mobile">
-                <img class="close" src="./images/close.png" alt="">
+            <div class="clockMaxBox clockWatchBox">
+                <img class="close" clock="clock" src="./images/close.png" alt="">
                 <div class="clockTitle bLine">
                     <div>
                         <img src="./images/clock.png" alt="">
@@ -112,12 +112,12 @@
                     <h2>00 ：00 ：00</h2>
                 </div>
                 <div class="clockBtn">
-                    <button>Start</button>
-                    <button>Reset</button>
+                    <button class="startWatch">Start</button>
+                    <button class="restWatch">Reset</button>
                 </div>
             </div>
-            <div class="clockMaxBox clockPomodoroBox" from="mobile">
-                <img class="close" src="./images/close.png" alt="">
+            <div class="clockMaxBox clockPomodoroBox">
+                <img class="close" clock="clock" src="./images/close.png" alt="">
                 <div class="clockTitle bLine">
                     <div>
                         <img src="./images/clock.png" alt="">
@@ -134,8 +134,8 @@
                     <p>You are the best, keep going!</p>
                 </div>
                 <div class="clockBtn">
-                    <button>End</button>
-                    <button>Reset</button>
+                    <button class="endPomodoro">End</button>
+                    <button class="resetPomodoro">Reset</button>
                 </div>
             </div>
             <div class="mobileBottomBox">
@@ -151,14 +151,14 @@
                                 <img class="musicMinBtn" src="./images/playMin.png" alt="">
                             </div>
                         </div>
-                        <div class="preBox">
+                        <div class="preBox musicPre">
                             <div class="nowPre"></div>
                             <div class="preDot"></div>
                         </div>
                     </div>
                     <img class="musicAlbum" src="./images/Album.png" alt="">
                 </div>
-                <div class="mobileTaskBox">
+                <div class="mobileTaskBox pomodoroTaskBox">
                     <div class="taskLeft">
                         <img src="./images/clock.png" alt="">
                         <p>Pomodoro</p>
@@ -166,21 +166,21 @@
                     <div class="taskRight">
                         <p>04:35</p>
                         <div class="taskBtn">
-                            <img src="./images/playIcon.png" alt="">
-                            <img src="./images/stopIcon.png" alt="">
+                            <img class="playIcon" src="./images/playIcon.png" alt="">
+                            <img class="stopIcon" src="./images/stopIcon.png" alt="">
                         </div>
                     </div>
                 </div>
-                <div class="mobileTaskBox">
+                <div class="mobileTaskBox watchTaskBox">
                     <div class="taskLeft">
                         <img src="./images/stopwatch.png" alt="">
-                        <p>Pomodoro</p>
+                        <p>Stop Watch</p>
                     </div>
                     <div class="taskRight">
                         <p>00:00</p>
                         <div class="taskBtn">
-                            <img src="./images/playIcon.png" alt="">
-                            <img src="./images/stopIcon.png" alt="">
+                            <img class="playIcon" src="./images/playIcon.png" alt="">
+                            <img class="stopIcon" src="./images/stopIcon.png" alt="">
                         </div>
                     </div>
                 </div>
@@ -189,7 +189,6 @@
     </div>
     <div class="box boxP">
         <audio controls src="./music/wyd.mp3" id="music"></audio>
-        
         <div class="leftBox">
             <a href="" class="logo"><img src="./images/logo.png" alt=""></a>
             <div class="taskBox">
@@ -399,7 +398,7 @@
                         <img class="musicMinBtn" src="./images/playMin.png" alt="">
                     </div>
                 </div>
-                <div class="preBox">
+                <div class="preBox musicPre">
                     <div class="nowPre"></div>
                     <div class="preDot"></div>
                 </div>
@@ -417,14 +416,14 @@
                         <img class="musicMinLikeBtn" src="./images/Like.png " alt="">
                     </div>
                 </div>
-                <div class="preBox">
+                <div class="preBox musicPre">
                     <div class="nowPre"></div>
                     <div class="preDot"></div>
                     <p class="playedTime">2:15</p>
                     <p class="noplayedTime">0:30</p>
                 </div>
             </div>
-            <div class="musicMaxBox">
+            <div class="musicMaxBox pcMusicMaxBox">
                 <img class="close" src="./images/close.png" alt="">
                 <div class="searchBox">
                     <img src="./images/searchIcon.png" alt="">
@@ -439,7 +438,7 @@
                         </div>
                         <img class="musicMinLikeBtn" src="./images/Like.png " alt="">
                     </div>
-                    <div class="preBox">
+                    <div class="preBox musicPre">
                         <div class="nowPre"></div>
                         <div class="preDot"></div>
                     </div>
@@ -465,6 +464,6 @@
     <script src="./js/jquery.js"></script>
     <script src="./js/common.js?v=1"></script>
     <script type="module" src="./js/music.js"></script>
-    <script src="./js/index.js"></script>
+    <script type="module"  src="./js/index.js"></script>
 </body>                  
 </html>

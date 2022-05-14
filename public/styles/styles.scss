@@ -146,7 +146,7 @@ width: 0 !important;height: 0;
     .timerBox,.musicBox{
         background: none;
         box-shadow: none;
-        display: none;
+        // display: none;
         div p{
             color: #667085;
         }
@@ -970,7 +970,8 @@ width: 0 !important;height: 0;
             margin-right: .09rem;
         }
         .mobileMusicBox{
-            display: flex;
+            display: none;
+            // display: flex;
             width: 3.3rem;
             height: 1.26rem;
             border-radius: .31rem;
@@ -1000,13 +1001,14 @@ width: 0 !important;height: 0;
         }
     }
     .mobileTaskBox{
+        display: none;
         width: 1.74rem;
         height: 1.26rem;
         background: #fff;
         border: 1px solid #EEEEEE;
         box-shadow: 0px 8.93002px 14.4254px rgba(16, 24, 40, 0.13);
         border-radius: .31rem;
-        display: flex;
+        // display: flex;
         .taskLeft{
             width: .8rem;
             background: #FF9A61;
