@@ -1,7 +1,8 @@
 $(document).ready(function(){
-    let mNavIndex=0;
+    let mNavIndex=2;
+    renderMCard();
     $(".navBox p").click(function(){
-        console.log($(this).index())
+        // console.log($(this).index())
         mNavIndex=$(this).index();
         $(".navBox p").removeClass("active")
         $(this).addClass("active")
@@ -66,6 +67,24 @@ $(document).ready(function(){
     $(".resetPomodoro").click(function(){
         time=0;
         startTask();
+    })
+    $(".narrow").click(function(){
+        $(".musicMaxBox").css("display","none");
+        $(".mobileMenuBox").addClass("mobileMenuBoxHide")
+        $(".mobileMenu div").removeClass("active");
+        if(taskTimer || stopTimer){
+            $(".mobileBottomBox").css("display","flex")
+            $(".mobileBottomBox .mobileMusicBox").css("display","flex")
+            if(taskTimer){
+                $(".mobileBottomBox .pomodoroTaskBox").css("display", "flex");
+            }
+            if(stopTimer){
+                $(".mobileBottomBox .watchTaskBox").css("display", "flex");
+            }
+        }else{
+            $(".onlyMusicBox").css("display","flex")
+            $(".mobileBottomBox .mobileMusicBox").css("display","none")
+        }
     })
     $(".clockMaxBox .close").click(function(){
         $(".mobileMenuBox").addClass("mobileMenuBoxHide");
@@ -184,9 +203,6 @@ $(document).ready(function(){
         $(".rightCon>div .card").css("display","none")
         $(".rightCon>div").eq(mNavIndex).find(".card").css("display","block")
     }
-
-
-
     $(".mobileMenu div").click(function(){
         let index = $(this).index();
         console.log(index)

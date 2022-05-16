@@ -1158,4 +1158,18 @@ width: 0 !important;height: 0;
         }
         
     }
+    .narrow{
+        width: .16rem;
+        height: .16rem;
+        position: absolute;
+        top: .16rem;
+        right: .5rem;
+        cursor: pointer;
+    }
+    .clockMaxBox{
+        .narrow{
+            width: .25rem;
+            height: .25rem;
+        }
+    }
 }

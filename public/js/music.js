@@ -223,21 +223,22 @@ $(".close").click(function(){
 		return;
 	}
 	$(".musicMaxBox").css("display","none");
-	$(".mobileMenuBox").addClass("mobileMenuBoxHide")
 	$(".mobileMenu div").removeClass("active");
-	if(taskTimer || stopTimer){
-		$(".mobileBottomBox").css("display","flex")
-		$(".mobileBottomBox .mobileMusicBox").css("display","flex")
-		if(taskTimer){
-			$(".mobileBottomBox .pomodoroTaskBox").css("display", "flex");
-		}
-		if(stopTimer){
-			$(".mobileBottomBox .watchTaskBox").css("display", "flex");
-		}
-	}else{
-		$(".onlyMusicBox").css("display","flex")
-		$(".mobileBottomBox .mobileMusicBox").css("display","none")
-	}
+	$(".mobileMenuBox").removeClass("mobileMenuBoxHide")
+	
+	// if(taskTimer || stopTimer){
+	// 	$(".mobileBottomBox").css("display","flex")
+	// 	$(".mobileBottomBox .mobileMusicBox").css("display","flex")
+	// 	if(taskTimer){
+	// 		$(".mobileBottomBox .pomodoroTaskBox").css("display", "flex");
+	// 	}
+	// 	if(stopTimer){
+	// 		$(".mobileBottomBox .watchTaskBox").css("display", "flex");
+	// 	}
+	// }else{
+	// 	$(".onlyMusicBox").css("display","flex")
+	// 	$(".mobileBottomBox .mobileMusicBox").css("display","none")
+	// }
 	if($("#music")[0].paused){
 		$(".musicStopBox").css("display","block")
 		$(".musicStartBox").css("display","none");
@@ -245,35 +246,6 @@ $(".close").click(function(){
 		$(".musicStopBox").css("display","none")
 		$(".musicStartBox").css("display","block");
 	}
-	// if(type=='mobile'){
-	// 	$(".mobileMenuBox").addClass("mobileMenuBoxHide")
-	// 	$(".mobileMenu div").removeClass("active");
-	// 	console.log(taskTimer,stopTimer)
-	// 	if(taskTimer || stopTimer){
-	// 		$(".mobileBottomBox").css("display","flex")
-	// 		$(".mobileBottomBox .mobileMusicBox").css("display","flex")
-	// 		if(taskTimer){
-    //             $(".mobileBottomBox .pomodoroTaskBox").css("display", "flex");
-	// 		}
-	// 		if(stopTimer){
-    //             $(".mobileBottomBox .watchTaskBox").css("display", "flex");
-    //         }
-	// 	}else{
-	// 		$(".onlyMusicBox").css("display","flex")
-	// 		$(".mobileBottomBox .mobileMusicBox").css("display","none")
-	// 	}
-	// 	// $(".clockWatchBox").css("display","none")
-	// 	// $(".clockPomodoroBox").css("display","none")
-	// }else{
-	// 	// pauseMusic();
-	// 	if($("#music")[0].paused){
-	// 		$(".musicStopBox").css("display","block")
-	// 		$(".musicStartBox").css("display","none");
-	// 	}else{
-	// 		$(".musicStopBox").css("display","none")
-	// 		$(".musicStartBox").css("display","block");
-	// 	}
-	// }
 })
 $(".musicMaxBox .searchBox input").on('input',function(e){
 	searchMusic=[];
