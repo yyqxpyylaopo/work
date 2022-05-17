@@ -108,7 +108,7 @@ width: 0 !important;height: 0;
         height: .34rem;
         border-radius: .06rem;
         margin-left: .15rem;
-        box-shadow: -2.06198px 0.687328px 8.93526px rgba(0, 0, 0, 0.17);
+        // box-shadow: -2.06198px 0.687328px 8.93526px rgba(0, 0, 0, 0.17);
         display: flex;
         justify-content: space-between;
         align-items: center;
@@ -128,32 +128,49 @@ width: 0 !important;height: 0;
         font-size: .11rem;
         line-height: .34rem;
         font-weight: 700;
-        color: #1D2939;
+        // color: #1D2939;
+        color: #667085;
     }
     .taskBox>p{
         width: .14rem;
         height: .14rem;
         border-radius: .04rem;
-        background: #1D2939;
+        // background: #1D2939;
         text-align: center;
         line-height: .14rem;
-        font-size: .08rem;
-        color: #fff;
+        // font-size: .08rem;
+        // color: #fff;
+        color: #344054;
+        font-size: .1rem;
     }
     .timerBox{
         margin-top: .06rem;
     }
-    .timerBox,.musicBox{
-        background: none;
-        box-shadow: none;
-        // display: none;
-        div p{
-            color: #667085;
+    // .timerBox,.musicBox{
+    //     // background: none;
+    //     // box-shadow: none;
+    //     // display: none;
+    //     div p{
+    //         color: #667085;
+    //     }
+    //     >p{
+    //         background: none;
+    //         color: #344054;
+    //         font-size: .1rem;
+    //     }
+    // }
+    .taskBox.active{
+        box-shadow: -2.06198px 0.687328px 8.93526px rgba(0, 0, 0, 0.17);
+        background: #fff;
+        div{
+            p{
+                color: #1D2939;
+            }
         }
         >p{
-            background: none;
-            color: #344054;
-            font-size: .1rem;
+            background: #1D2939;
+            color: #fff;
+            font-size: .08rem;
         }
     }
     .rightTopBox{

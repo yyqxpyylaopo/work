@@ -198,7 +198,9 @@ $(".previous").click(()=>{
 $(".next").click(()=>{
 	nextMusic();
 })
-$(".musicBox").click(()=>{
+$(".musicBox").click(function(){
+	$(".taskBox").removeClass("active")
+	$(this).addClass("active")
 	$(".pcMusicMaxBox").css("display","block");
 	$(".musicStartBox").css("display","none");
 	$(".onlyMusicBox").css("display","none");
@@ -225,7 +227,8 @@ $(".close").click(function(){
 	$(".musicMaxBox").css("display","none");
 	$(".mobileMenu div").removeClass("active");
 	$(".mobileMenuBox").removeClass("mobileMenuBoxHide")
-	
+	$(".taskBox").removeClass("active")
+	$(".onlyTaskBox").addClass("active")
 	// if(taskTimer || stopTimer){
 	// 	$(".mobileBottomBox").css("display","flex")
 	// 	$(".mobileBottomBox .mobileMusicBox").css("display","flex")

@@ -113,8 +113,14 @@ $(document).ready(function(){
             $(".mobileBottomBox .mobileMusicBox").css("display", "flex");
         }
     })
-    $(".timerBox").click(()=>{
+    $(".onlyTaskBox").click(function(){
+        $(".taskBox").removeClass("active")
+	    $(this).addClass("active")
+    })
+    $(".timerBox").click(function(){
         $(".timeMaxTask").css("display","block");
+        $(".taskBox").removeClass("active")
+	    $(this).addClass("active")
     })
     // $(".timeTask").click(function () {
     //     $(".stopTime").css("display", "none")
