@@ -9,8 +9,11 @@
     <link rel="stylesheet" href="styles/media.scss">
 </head>
 <body>
+    <!-- 移动端 -->
     <div class="box boxM">
+        <!-- 移动端上部 -->
         <div class="mobileTopBox">
+            <!-- 移动端用户 -->
             <div class="moblieUser">
                 <div>
                     <img src="./images/menuIcon.png" alt="">
@@ -18,11 +21,13 @@
                 </div>
                 <img src="./images/avator.png" alt="">
             </div>
+            <!-- 移动端nav -->
             <div class="navBox">
                 <p>Not Started</p>
                 <p>In progress</p>
                 <p class="active">Already done</p>
             </div>
+            <!-- 移动端筛选 -->
             <div class="mScreenBox">
                 <h2>Categories</h2>
                 <div>
@@ -30,6 +35,7 @@
                     <button>Add</button>
                 </div>
             </div>
+            <!-- 移动端菜单menu mobileMenuBoxHide为隐藏状态，即收缩状态-->
             <!-- mobileMenuBoxHide -->
             <div class="mobileMenuBox">
                 <div class="mobileMenu">
@@ -44,6 +50,7 @@
                 </div>
                 <div class="mobileMenuGray"></div>
             </div>
+            <!-- 仅音乐收缩在下方的盒子 -->
             <div class="mobileMusicBox onlyMusicBox">
                 <div class="musicCon">
                     <div class="musicText">
@@ -63,6 +70,7 @@
                 </div>
                 <img class="musicAlbum" src="./images/Album.png" alt="">
             </div>
+            <!-- 大音乐card盒子 -->
             <div class="musicMaxBox mobileMusicMaxBox">
                 <img class="narrow" src="./images/narrowIcon.png" alt="">
                 <img class="close" src="./images/close.png" alt="">
@@ -84,7 +92,7 @@
                         <div class="preDot"></div>
                     </div>
                     <div class="musicBtnBox">
-                        <img class="suiji" src="./images/Shuffle.png" alt="">
+                        <img class="suiji" src="./images/sx.png" alt="">
                         <div class="musicPlayBtn">
                             <img class="previous" src="./images/Previous.png " alt="">
                             <img class="pauseBig" src="./images/playBig.png " alt="">
@@ -100,8 +108,8 @@
                     </div>
                 </div>
             </div>
+            <!-- 大时间任务盒子 Stop Watch -->
             <div class="clockMaxBox clockWatchBox">
-                <!-- <img class="narrow" src="./images/narrowIcon.png" alt=""> -->
                 <img class="close" clock="clock" src="./images/close.png" alt="">
                 <div class="clockTitle bLine">
                     <div>
@@ -118,8 +126,8 @@
                     <button class="restWatch">Reset</button>
                 </div>
             </div>
+            <!-- 大时间任务盒子 Pomodoro -->
             <div class="clockMaxBox clockPomodoroBox">
-                <!-- <img class="narrow" src="./images/narrowIcon.png" alt=""> -->
                 <img class="close" clock="clock" src="./images/close.png" alt="">
                 <div class="clockTitle bLine">
                     <div>
@@ -141,6 +149,7 @@
                     <button class="resetPomodoro">Reset</button>
                 </div>
             </div>
+            <!-- 移动端收缩在下方的盒子  包含音乐和时间任务 -->
             <div class="mobileBottomBox">
                 <div class="mobileMusicBox">
                     <div class="musicCon">
@@ -190,10 +199,15 @@
             </div>
         </div>
     </div>
+    <!-- PC端 -->
     <div class="box boxP">
+        <!-- 音乐audio标签 -->
         <audio controls src="./music/wyd.mp3" id="music"></audio>
+        <!-- PC端左侧列表 -->
         <div class="leftBox">
+            <!-- logo -->
             <a href="" class="logo"><img src="./images/logo.png" alt=""></a>
+            <!-- 任务列表 Tasks -->
             <div class="taskBox onlyTaskBox active">
                 <div>
                     <img src="./images/taskIcon.png" alt="">
@@ -201,12 +215,14 @@
                 </div>
                 <p>5</p>
             </div>
+            <!-- 任务列表 Timer -->
             <div class="taskBox timerBox">
                 <div>
                     <img src="./images/timerIcon.png" alt="">
                     <p>Timer</p>
                 </div>
             </div>
+            <!-- 任务列表 Music -->
             <div class="taskBox musicBox">
                 <div>
                     <img src="./images/userIcon.png" alt="">
@@ -215,22 +231,29 @@
                 <p>2</p>
             </div>
         </div>
+        <!-- PC端右侧 -->
         <div class="rightBox">
+            <!-- 上部搜索和按钮 -->
             <div class="rightTopBox">
+                <!-- 搜索框 -->
                 <div class="searchBox">
                     <img src="./images/searchIcon.png" alt="">
                     <input type="text" placeholder="Find a tag/Kanban card...">
                 </div>
+                <!-- 按钮盒子 -->
                 <div class="rightTopBtnBox">
                     <button class="addTaskBtn">Add Task</button>
                     <button class="addColumnBtn">Add Column</button>
                 </div>
             </div>
+            <!-- 筛选盒子 -->
             <div class="screenBox">
                 <img src="./images/screenIcon.png" alt="">
                 <p>Categorie by Completion status</p>
             </div>
+            <!-- 右侧主要内容盒子 -->
             <div class="rightCon">
+                <!-- 右侧card列表盒子 Not started -->
                 <div class="notStartBox">
                     <div class="titleBox bLine">
                         <h2>Not started</h2>
@@ -281,6 +304,7 @@
                         </div>
                     </div>
                 </div>
+                <!-- 右侧card列表盒子 In progress -->
                 <div class="progressBox">
                     <div class="titleBox bLine">
                         <h2>In progress</h2>
@@ -332,6 +356,7 @@
                         </div>
                     </div>
                 </div>
+                <!-- 右侧card列表盒子 Already done -->
                 <div class="doneBox">
                     <div class="titleBox bLine">
                         <h2>Already done</h2>
@@ -364,6 +389,7 @@
                     </div>
                 </div>
             </div>
+            <!-- PC端时间任务 未开始状态 -->
             <div class="timeTask stopTime">
                  <h2>Project 1.</h2>
                  <div class="timeBox">
@@ -371,12 +397,14 @@
                      <h2>03:56</h2>
                  </div>
             </div>
+            <!-- PC端时间任务 开始状态 -->
             <div class="timeTask startTime">
                 <div class="timeBox bLine">
                     <img src="./images/timeStartIcon.png" alt="">
                     <h2>03:56</h2>
                 </div>
             </div>
+            <!-- PC端时间任务 点击放大状态 -->
             <div class="timeTask timeMaxTask">
                 <div class="timeTitle bLine">
                     <img src="./images/clock.png" alt="">
@@ -387,6 +415,7 @@
                     <h2>03:56</h2>
                 </div>
             </div>
+            <!-- 音乐card 暂停状态 -->
             <div class="musicMinBox musicStopBox">
                 <div class="musicCon">
                     <div class="musicText">
@@ -406,6 +435,7 @@
                     <div class="preDot"></div>
                 </div>
             </div>
+            <!-- 音乐card 播放状态 -->
             <div class="musicMinBox musicStartBox">
                 <img class="close" src="./images/close.png" alt="">
                 <div class="musicCon">
@@ -426,12 +456,16 @@
                     <p class="noplayedTime">0:30</p>
                 </div>
             </div>
+            <!-- 大音乐card 包含音乐列表-->
             <div class="musicMaxBox pcMusicMaxBox">
+                <!-- 关闭按钮 -->
                 <img class="close" src="./images/close.png" alt="">
+                <!-- 音乐搜索盒子 -->
                 <div class="searchBox">
                     <img src="./images/searchIcon.png" alt="">
                     <input type="text" placeholder="Find your song...">
                 </div>
+                <!-- 音乐主要展示部分 -->
                 <div class="musicCon bLine">
                     <img class="musicAlbum" src="./images/Album.png" alt="">
                     <div class="musicFrom">
@@ -446,7 +480,7 @@
                         <div class="preDot"></div>
                     </div>
                     <div class="musicBtnBox">
-                        <img class="suiji" src="./images/Shuffle.png" alt="">
+                        <img class="suiji" src="./images/sx.png" alt="">
                         <div class="musicPlayBtn">
                             <img class="previous" src="./images/Previous.png " alt="">
                             <img class="pauseBig" src="./images/playBig.png " alt="">
@@ -455,6 +489,7 @@
                         <img class="share" src="./images/Share.png" alt="">
                     </div>
                 </div>
+                <!-- 音乐列表 -->
                 <div class="playBox">
                     <h2>Playlist</h2>
                     <div class="playList">

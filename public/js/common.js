@@ -1,14 +1,13 @@
-var oldType="pc"
-var type="pc";
-var pomodoroTime = 300;
-var taskTimer = null,stopTimer=null;
+var type="pc";  //当前属于移动端还是PC端，小于等于1000为移动端
+var pomodoroTime = 300;  //默认任务时间5分钟，即300秒
+var taskTimer = null,stopTimer=null; //taskTimer任务的计时，即Pomodoro的计时，stopTimer 正计时的计时，即stop watch的计时
+//根据屏幕宽度计算设置相对应的根元素font-size,从而更改rem大小
 ; (function (win) {
     var tid
     function refreshRem() {
         let html = document.documentElement
         let wW = html.clientWidth // 窗口宽度
         let designSize = 1000 // 设计图尺寸
-        oldType=type;
         if(wW<=1000){
             designSize=370
             type="mobile"
@@ -17,7 +16,6 @@ var taskTimer = null,stopTimer=null;
         }
         let rem = (wW * 100) / designSize
         document.documentElement.style.fontSize = rem + 'px'
-        // init();
     }
     win.addEventListener(
         'resize',
@@ -40,24 +38,12 @@ var taskTimer = null,stopTimer=null;
     refreshRem();
 
 })(window)
-function init(){
-    if(oldType == type){
-        return;
-    }
-    if(taskTimer || stopTimer){
-        if(type=='mobile'){
-            $(".mobileMenuBox").addClass("mobileMenuBoxHide");
-            $(".mobileBottomBox").css("display","flex");
-            $(".pomodoroTaskBox").css("display","flex");
-        }else{
-            $(".startTime").css("display","block");
-        }
-    }
-}
+//判断某节点是否隐藏
 function isNone(dom){
     let res = dom.css("display")=='none'?true:false;
     return res;
 }
+//秒转换成时分秒   type为h返回时分秒，为其他返回分秒
 function formatSeconds(second,type){//秒转换成时分秒
     var s = parseInt(second);// 需要转换的时间秒 
     var m = 0;// 分 
@@ -70,7 +56,6 @@ function formatSeconds(second,type){//秒转换成时分秒
             m = parseInt(m % 60);
         }
     }
-
     var ss, mm, hh;
     if (s > 0) {
         ss = s.toString().length >= 2 ? s.toString() : "0" + s.toString();
@@ -97,52 +82,3 @@ function formatSeconds(second,type){//秒转换成时分秒
         return result;
     }
 }
-// $(".rightTopBtnBox button").click(function(){
-//     $(this).addClass('smaller');
-//     setTimeout(()=>{
-//         $(this).removeClass('smaller');
-//     },200)
-// })
-// let pomodoroTime=300;
-// let taskTimer=null;
-// console.log(pomodoroTime)
-// $(".timeBox h2").html(formatSeconds(pomodoroTime));
-// $(".timeTask").click(function(){
-//     $(".stopTime").css("display","none")
-//     $(".startTime").css("display","none")
-//     $(".timeMaxTask").css("display","block")
-// })
-// $(".stopTime img").click(function(e){
-//     e.stopPropagation();
-//     $(".stopTime").css("display","none")
-//     $(".startTime").css("display","block")
-//     $(".timeMaxTask").css("display","none")
-//     startTask();
-// })
-// $(".startTime img").click(function(e){
-//     e.stopPropagation();
-//     $(".stopTime").css("display","block")
-//     $(".startTime").css("display","none")
-//     $(".timeMaxTask").css("display","none")
-//     stopTask();
-// })
-
-// function startTask(){
-//     taskTimer && clearInterval(taskTimer)
-//     let time=pomodoroTime;
-//     taskTimer=setInterval(()=>{
-//         time--;
-//         if(time<=0){
-//             time=pomodoroTime;
-//             stopTask();
-//         }
-//         $(".stopTime .timeBox h2").html(formatSeconds(time))
-//         $(".startTime .timeBox h2").html(formatSeconds(time))
-//     },1000)
-// }
-// function stopTask(){
-//     clearInterval(taskTimer);
-//     $(".stopTime").css("display","block")
-//     $(".startTime").css("display","none")
-//     $(".timeMaxTask").css("display","none")
-// }

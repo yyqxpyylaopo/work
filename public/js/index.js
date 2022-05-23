@@ -1,30 +1,33 @@
 $(document).ready(function(){
-    let mNavIndex=2;
-    renderMCard();
+    let mNavIndex=2;  //移动端nav（Not Started，In progress，Already done）默认索引
+    renderMCard(); //根据索引展示相对应的card
+    //监听nav点击操作，根据切换的nav展示相对应card
     $(".navBox p").click(function(){
-        // console.log($(this).index())
         mNavIndex=$(this).index();
         $(".navBox p").removeClass("active")
         $(this).addClass("active")
         renderMCard();
     })
+    //PC端右上角Add Task，Add Column点击收缩效果
     $(".rightTopBtnBox button").click(function () {
         $(this).addClass('smaller');
         setTimeout(() => {
             $(this).removeClass('smaller');
         }, 200)
     })
+    //移动端Categories右侧Add点击收缩效果
     $(".mScreenBox button").click(function () {
         $(this).addClass('smaller');
         setTimeout(() => {
             $(this).removeClass('smaller');
         }, 200)
     })
+    //默认展示设置的任务时间
     $(".timeBox h2").html(formatSeconds(pomodoroTime));
     $(".clockPomodoroBox .clockTime h2").html(formatSeconds(pomodoroTime,'h'));
     $(".pomodoroTaskBox .taskRight p").html(formatSeconds(pomodoroTime));
+    //移动端下方收缩的小黄色横块块点击操作效果
     $(".mobileMenuBox").click(function(){
-        console.log($(this).hasClass("mobileMenuBoxHide"))
         if($(this).hasClass("mobileMenuBoxHide")){
             $(this).removeClass("mobileMenuBoxHide");
             $(".mobileMusicBox").css("display", "none");
@@ -32,12 +35,15 @@ $(document).ready(function(){
             $(".mobileTaskBox").css("display", "none");
         }
     })
+    //大Stop Watch的Start按键
     $(".startWatch").click(function(){
         watchTaskStart();
     })
+    //大Stop Watch的Reset按键
     $(".restWatch").click(function(){
         watchTaskStart();
     })
+    //Stop Watch开始计时函数
     function watchTaskStart(){
         stopTimer && clearInterval(stopTimer);
         let wachTime=0;
@@ -48,14 +54,17 @@ $(document).ready(function(){
             $(".watchTaskBox .taskBtn .playIcon").attr('src',require('../images/pauseMin.png'))
         },1000)
     }
+    //小pomodoro playIcon即开始icon 点击
     $(".pomodoroTaskBox .playIcon").click(function(){
         startTask();
     })
+    //小pomodoro stopIcon即结束icon 点击
     $(".pomodoroTaskBox .stopIcon").click(function(){
         stopTask();
     })
+    //大Pomodoro  End点击
     $(".endPomodoro").click(function(){
-        time=0;
+        potime=0;
         clearInterval(taskTimer);
         $(".stopTime .timeBox h2").html(pomodoroTime)
         $(".startTime .timeBox h2").html(formatSeconds(pomodoroTime))
@@ -64,10 +73,12 @@ $(document).ready(function(){
         $(".clockTime .nowPre").css("width",0)
         $(".clockTime .preDot").css("left",0)
     })
+    //大Pomodoro  Reset点击
     $(".resetPomodoro").click(function(){
-        time=0;
+        potime=0;
         startTask();
     })
+    //移动端大音乐框的缩小按钮点击操作
     $(".narrow").click(function(){
         $(".musicMaxBox").css("display","none");
         $(".mobileMenuBox").addClass("mobileMenuBoxHide")
@@ -86,6 +97,7 @@ $(document).ready(function(){
             $(".mobileBottomBox .mobileMusicBox").css("display","none")
         }
     })
+    //大Stop Watch和大Pomodoro的关闭按钮操作
     $(".clockMaxBox .close").click(function(){
         $(".mobileMenuBox").addClass("mobileMenuBoxHide");
         $(".mobileMenu div").removeClass("active");
@@ -113,21 +125,18 @@ $(document).ready(function(){
             $(".mobileBottomBox .mobileMusicBox").css("display", "flex");
         }
     })
+    //PC端右侧列表Tasks点击
     $(".onlyTaskBox").click(function(){
         $(".taskBox").removeClass("active")
 	    $(this).addClass("active")
     })
+    //PC端右侧列表Timer点击
     $(".timerBox").click(function(){
         $(".timeMaxTask").css("display","block");
         $(".taskBox").removeClass("active")
 	    $(this).addClass("active")
     })
-    // $(".timeTask").click(function () {
-    //     $(".stopTime").css("display", "none")
-    //     $(".startTime").css("display", "none")
-    //     $(".timeMaxTask").css("display", "block")
-    //     $(".timerBox").css("display", "block")
-    // })
+    //PC端Pomodoro弹出框下面时间的点击操作
     $(".timeMaxTask .timeBox").click(function(e){
         e.stopPropagation();
         if(taskTimer){
@@ -139,6 +148,7 @@ $(document).ready(function(){
         }
         $(".timeMaxTask").css("display", "none")
     })
+    //PC端Project 1.的开始点击操作
     $(".stopTime img").click(function (e) {
         e.stopPropagation();
         $(".stopTime").css("display", "none")
@@ -146,6 +156,7 @@ $(document).ready(function(){
         $(".timeMaxTask").css("display", "none")
         startTask();
     })
+    //PC端任务的结束点击操作
     $(".startTime img").click(function (e) {
         e.stopPropagation();
         $(".stopTime").css("display", "block")
@@ -153,22 +164,24 @@ $(document).ready(function(){
         $(".timeMaxTask").css("display", "none")
         stopTask();
     })
-    let time = 0;
+    //任务计时时间
+    let potime = 0;
+    //任务开始函数
     function startTask() {
-        time = time?time:pomodoroTime;
+        potime = potime?potime:pomodoroTime;
         taskTimer && clearInterval(taskTimer)
         taskTimer = setInterval(function() {
-            time--;
-            if (time <= 0) {
-                time = pomodoroTime;
+            potime--;
+            if (potime <= 0) {
+                potime = pomodoroTime;
                 stopTask();
             }
-            $(".stopTime .timeBox h2").html(formatSeconds(time))
-            $(".startTime .timeBox h2").html(formatSeconds(time))
-            $(".clockPomodoroBox .clockTime h2").html(formatSeconds(time,"h"))
-            $(".pomodoroTaskBox .taskRight p").html(formatSeconds(time));
+            $(".stopTime .timeBox h2").html(formatSeconds(potime))
+            $(".startTime .timeBox h2").html(formatSeconds(potime))
+            $(".clockPomodoroBox .clockTime h2").html(formatSeconds(potime,"h"))
+            $(".pomodoroTaskBox .taskRight p").html(formatSeconds(potime));
             $(".pomodoroTaskBox .taskBtn .playIcon").attr('src',require('../images/pauseMin.png'))
-            let width = (pomodoroTime-time)/pomodoroTime*100+'%';
+            let width = (pomodoroTime-potime)/pomodoroTime*100+'%';
             $(".clockTime .nowPre").css("width",width)
             $(".clockTime .preDot").css("left",width)
         },1000)
@@ -186,17 +199,12 @@ $(document).ready(function(){
 		    $(".mobileBottomBox .mobileMusicBox").css("display","flex")
         }
     }
+    //任务结束函数
     function stopTask() {
         clearInterval(taskTimer);
-        // $(".stopTime .timeBox h2").html(formatSeconds(pomodoroTime))
-        // $(".startTime .timeBox h2").html(formatSeconds(pomodoroTime))
-        // $(".clockPomodoroBox .clockTime h2").html(formatSeconds(pomodoroTime,"h"))
-        // $(".pomodoroTaskBox .taskRight p").html(formatSeconds(pomodoroTime));
         setTimeout(()=>{
             $(".pomodoroTaskBox .taskBtn .playIcon").attr('src',require('../images/playIcon.png'))
         },200)
-        // $(".clockTime .nowPre").css("width",0)
-        // $(".clockTime .preDot").css("left",0)
         $(".startTime").css("display", "none")
         $(".timeMaxTask").css("display", "none")
         if(type=='mobile'){
@@ -205,10 +213,12 @@ $(document).ready(function(){
             $(".stopTime").css("display", "block")
         }
     }
+    //移动端根据nav索引渲染相对应的card函数
     function renderMCard(){
         $(".rightCon>div .card").css("display","none")
         $(".rightCon>div").eq(mNavIndex).find(".card").css("display","block")
     }
+    //移动端下方黄色大块块（含有音乐和任务按钮）内部音乐和任务按钮的点击操作
     $(".mobileMenu div").click(function(){
         let index = $(this).index();
         console.log(index)
@@ -223,6 +233,7 @@ $(document).ready(function(){
             $(".clockWatchBox").css("display","flex")
         }
     })
+    //大任务框的next(即右侧箭头按钮)，切换下一个clock，即切换Stop Watch和Pomodoro
     $(".clockNext").click(function(){
         let show = $(this).attr("show");
         $(".clockMaxBox").css("display","none");
