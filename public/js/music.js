@@ -1,4 +1,4 @@
-//引入音乐
+//import of music
 import ComeThrough from "url:../music/ComeThrough.mp3"
 import wyd from "url:../music/wyd.mp3"
 import California from "url:../music/California.mp3"
@@ -6,7 +6,7 @@ import EverySummertime from "url:../music/EverySummertime.mp3"
 import Ride from "url:../music/Ride.mp3"
 import PalmSprings from "url:../music/PalmSprings.mp3"
 
-//音乐信息列表
+//list of music
 let musicList=[{
 	id:"1838886738",
 	name:'Come Through ',
@@ -46,28 +46,28 @@ let musicList=[{
 }]
 
 
-//当前播放音乐索引
+//Index of current playing music
 let musicIndex=0;
-//当前播放音乐信息
+//Current playing music information
 let nowMusic={};
-//音乐已播放时间，音乐总播放时间
+//Played time of music, total played time of music
 let time=0,duration=0;
-let playType=1; //1顺序播放，2随机播放，3单曲循环播放
-// 播放类型icon图片列表
+let playType=1; //1 plays sequentially, 2 plays randomly, and 3 singles play in a loop
+// Play type icon picture list
 let typeList=[
 	require('../images/sx.png'),
 	require('../images/sj.png'),
 	require('../images/dq.png'),
 ]
-//音乐播放计时器
+//Music playback timer
 let timer=null;
-//搜索的音乐列表
+//Search for a list of music
 let searchMusic=[];
-//最开始渲染音乐card
+//start rendering the music card
 renderMinMusic();
-//渲染音乐列表
+//Render music List
 renderPlayList(musicList);
-//最开始渲染音乐相关内容函数，默认第一首暂停播放
+//First render music related content function, the default first pause playing
 function renderMinMusic(){
 	nowMusic=musicList[musicIndex];
 	$(".musicName").html(nowMusic.name);
@@ -84,7 +84,7 @@ function renderMinMusic(){
 	$(".preDot").css('left',0)
 	$(".suiji").attr('src',typeList[playType-1])
 }
-//播放音乐
+//play the music
 function playMusic(){
 	if(type!="mobile"){
 		$(".musicStopBox").css("display","none")
@@ -107,7 +107,7 @@ function playMusic(){
 		$(".mobileMusicMaxBox").css("display","none")
 	}
 }
-//暂停音乐
+//stop the music
 function pauseMusic(){
 	if(type!="mobile"){
 		$(".musicStopBox").css("display","block")
@@ -118,7 +118,7 @@ function pauseMusic(){
 	$(".musicMinBtn").attr('src',require('../images/playMin.png'));
 	clearInterval(timer)
 }
-//音乐计时函数
+//Music timing function
 function musicTimeInterval(){
 	timer && clearInterval(timer)
 	let percentage = time/duration*100+'%';
@@ -151,7 +151,7 @@ function musicTimeInterval(){
 		// console.log(time,duration,percentage)
 	},1000)
 }
-//下一首
+//The following piece
 function nextMusic(){
 	time=0;
 	// console.log(musicIndex)
@@ -163,7 +163,7 @@ function nextMusic(){
 	renderMinMusic();
 	playMusic();
 }
-//上一首
+//last song
 function preMusic(){
 	time=0;
 	if(musicIndex == 0){
@@ -174,14 +174,14 @@ function preMusic(){
 	renderMinMusic();
 	playMusic();
 }
-//随即一首
+//a song in random
 function randomMusic(){
 	time=0;
 	duration=0;
 	musicIndex = parseInt(Math.random()*musicList.length)+1;
 	renderMinMusic();
 }
-//PC端下方小音乐暂停播放card的播放按钮
+//The play button of the small music pause card at the bottom of the PC
 $(".musicMinBtn").click(()=>{
 	if($("#music")[0].paused){
 		playMusic();
@@ -189,7 +189,7 @@ $(".musicMinBtn").click(()=>{
 		pauseMusic();
 	}
 })
-//PC端下方小音乐开始播放card的暂停播放按钮
+//The small music at the bottom of the PC starts to play the pause button of card
 $(".pauseBig").click(function(){
 	if($("#music")[0].paused){
 		if(type=="mobile"){
@@ -205,7 +205,7 @@ $(".pauseBig").click(function(){
 		}
 	}
 })
-//音乐card的收藏小心心按钮
+//Music card collection heart button
 $(".musicMinLikeBtn").click(()=>{
 	if(localStorage.getItem(nowMusic.id)){
 		localStorage.removeItem(nowMusic.id);
@@ -216,7 +216,7 @@ $(".musicMinLikeBtn").click(()=>{
 	}
 	renderPlayList(musicList);
 })
-//播放类型切换，顺序，随机，单曲
+//Play type switch, order, random, single
 $(".suiji").click(()=>{
 	if(playType==3){
 		playType=1;
@@ -225,15 +225,15 @@ $(".suiji").click(()=>{
 	}
 	$(".suiji").attr('src',typeList[playType-1])
 })
-//上一首点击按钮
+//Click the button on the last one
 $(".previous").click(()=>{
 	preMusic();
 })
-//下一首点击按钮
+//Next click the button
 $(".next").click(()=>{
 	nextMusic();
 })
-//PC端右侧列表Music点击
+//Music In the right list on the PC Click
 $(".musicBox").click(function(){
 	$(".taskBox").removeClass("active")
 	$(this).addClass("active")
@@ -249,7 +249,7 @@ $(".musicBox").click(function(){
 		$(".mobileMusicMaxBox").css("display","block");
 	}
 })
-//音乐card的close按钮点击操作
+//Click the close button of music card to operate
 $(".close").click(function(){
 	let clock=$(this).attr("clock");
 	if(clock=='clock'){
@@ -268,7 +268,7 @@ $(".close").click(function(){
 		$(".musicStartBox").css("display","block");
 	}
 })
-//监听音乐搜索框输入
+//Listen for music search box input
 $(".musicMaxBox .searchBox input").on('input',function(e){
 	searchMusic=[];
 	let text = $(this).val();
@@ -280,14 +280,14 @@ $(".musicMaxBox .searchBox input").on('input',function(e){
 	})
 	renderPlayList(searchMusic)
 })
-//PC端右侧上面搜索框输入内容
+//Enter the content in the search box on the right of the PC
 let text = "";
-//监听PC端右侧上面搜索框输入内容
+//Listen to the input in the search box on the right side of the PC
 $(".rightTopBox .searchBox input").on('input',function(e){
 	text = $(this).val();
 	// console.log(text)
 })
-//监听enter按键，按下enter后根据PC端右侧上面搜索框输入内容搜索card
+//Listen for enter and press Enter to search for card according to the input in the search box on the right of the PC
 document.onkeydown = function(event){
 	if(event.keyCode == 13){
 		if(text){
@@ -329,7 +329,7 @@ document.onkeydown = function(event){
 		$(".doneBox .num").html($(".doneBox .card:visible").length)
 	}
 }
-//音乐列表渲染函数
+//Music list rendering function
 function renderPlayList(musicList){
 	let html="";
 	if(musicList.length==0){
@@ -357,7 +357,7 @@ function renderPlayList(musicList){
 			</div>`
 	})
 	$(".playList").html(html)
-	//音乐列表内收藏心心点击
+	//Music list favorites heart click
 	$(".playBtnXin").click(function(){
 		let index = $(this).attr("id");
 		let music = musicList[index]
@@ -375,7 +375,7 @@ function renderPlayList(musicList){
 			}
 		}
 	})
-	//音乐列表内播放按钮点击
+	//Click the play button in the music list
 	$(".playBtnPlay").click(function(){
 		let index = $(this).attr("id");
 		musicIndex=index;
