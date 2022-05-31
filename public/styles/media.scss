@@ -1,11 +1,11 @@
-//自适应css
-//屏幕宽度大于1000px且小于2000px时
+//Adaptive CSS
+//The screen width is greater than 1000px and smaller than 2000px
 @media screen and (min-width: 1000px) and (max-width: 2000px){
     .rightCon>div .card{
         display: block!important;
     }
 }
-//屏幕宽度小于1000px时
+//When the screen width is less than 1000px
 @media screen and (max-width: 1000px){
     .boxM{
         display: block;
