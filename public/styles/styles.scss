@@ -20,7 +20,7 @@ width: 0 !important;
 ::-webkit-scrollbar {
 width: 0 !important;height: 0;
 }
-//引入的字体文件
+//Import font files
 @font-face {
     font-family: "Karla";
     src: url("../fonts/Karla-Regular-webfont.ttf");
@@ -29,7 +29,7 @@ width: 0 !important;height: 0;
     font-family: "Archivo";
     src: url("../fonts/Archivo-Regular.ttf");
 }
-//最外面盒子
+//box
 .box{
 	width: 100%;
     height: 100vh;
@@ -64,24 +64,24 @@ width: 0 !important;height: 0;
 .bj8{
     background: #F6DCFF;
 }
-//audio，即播放音乐的标签
+//Audio, the label for playing music
 #music{
     display: none;
     position: absolute;
     top: 0;
     left: 0;
 }
-//PC端盒子
+//PC box
 .boxP{
     display: flex;
 }
-//移动端盒子
+//Mobile box
 .boxM{
     display: none;
     height: auto;
 }
 .box{
-    //PC端左侧内容
+    //content on the left of the PC
     .leftBox{
         width: 1.4rem;
         height: 100%;
@@ -95,14 +95,14 @@ width: 0 !important;height: 0;
         margin: 0 auto;
         margin-top: .09rem;
     }
-    //PC端右侧内容
+    //Content on the right of the PC
     .rightBox{
         flex: 1;
         background: #E6ECF0 url('../images/bj1.png') no-repeat right bottom;
         background-size: 60vw 34.5vw;
         overflow-y: auto;
     }
-    //PC端左侧任务列表，Tasks，Timer，Music
+    //Tasks, Timer, and Music are listed on the left side of the PC
     .taskBox{
         width: 1.4rem;
         height: .34rem;
@@ -145,7 +145,7 @@ width: 0 !important;height: 0;
     .timerBox{
         margin-top: .06rem;
     }
-    //已选中状态的任务列表样式
+    //Style of task list with selected state
     .taskBox.active{
         box-shadow: -2.06198px 0.687328px 8.93526px rgba(0, 0, 0, 0.17);
         background: #fff;
@@ -160,7 +160,7 @@ width: 0 !important;height: 0;
             font-size: .08rem;
         }
     }
-    //右侧上部搜索框最外面盒子
+    //Top right search box for the outermost box
     .rightTopBox{
         height: .65rem;
         display: flex;
@@ -169,7 +169,7 @@ width: 0 !important;height: 0;
         padding: 0 .3rem;
         border-bottom: 1px solid #e4e4e4;
     }
-    //右侧上部搜索框盒子
+    //Top right search box box
     .searchBox{
         width: 3.2rem;
         height: .32rem;
@@ -189,7 +189,7 @@ width: 0 !important;height: 0;
         font-size: .11rem;
         margin-left: .11rem;
     }
-    //右侧上部搜索框右侧按钮盒子
+    //Right upper search box right button box
     .rightTopBtnBox{
         display: flex;
         button{
@@ -207,11 +207,11 @@ width: 0 !important;height: 0;
             background: #87E4E4;
         }
     }
-    //缩小状态样式
+    //Reduced state style
     .smaller{
         transform: scale(.8);
     }
-    //筛选盒子
+    //Screen box
     .screenBox{
         display: none;
         // display: flex;
@@ -231,7 +231,7 @@ width: 0 !important;height: 0;
             letter-spacing: -0.002rem;
         }
     }
-    //PC右侧主要内容card，即Not started等下方card样式
+    //The main content on the right of the PC is Card
     .rightCon{
         display: flex;
         justify-content: space-between;
@@ -350,7 +350,7 @@ width: 0 !important;height: 0;
             border: 1px solid #f00;
         }
     }
-    //时间任务盒子
+    //time task box
     .timeTask{
         width: .96rem;
         height: 1rem;
@@ -383,11 +383,11 @@ width: 0 !important;height: 0;
             }
         }
     }
-    //时间任务停止盒子
+    //Time task stop box
     .stopTime{
         // display: none;
     }
-    //时间任务开始盒子
+    //Time task start box
     .startTime{
         display: none;
         width: 1.76rem;
@@ -407,7 +407,7 @@ width: 0 !important;height: 0;
             }
         }
     }
-    //大的时间任务盒子
+    //max time task box
     .timeMaxTask{
         display: none;
         padding: 0;
@@ -431,7 +431,7 @@ width: 0 !important;height: 0;
             margin-top: .03rem;
         }
     }
-    //小的音乐card盒子
+    //min time task box
     .musicMinBox{
         cursor: pointer;
         width: 2.84rem;
@@ -482,7 +482,7 @@ width: 0 !important;height: 0;
             }
         }  
     }
-    //音乐进度条盒子
+    //Music progress bar box
     .preBox{
         width: 100%;
         height: .016rem;
@@ -525,11 +525,11 @@ width: 0 !important;height: 0;
             top: -.17rem;
         }
     } 
-    //小的音乐停止播放盒子     
+    //Small music stops playing box
     .musicStopBox{
         // display: none;
     }
-    //小的音乐开始播放盒子     
+    //Small music starts playing box  
     .musicStartBox{
         display: none;
         .musicCon{
@@ -563,7 +563,7 @@ width: 0 !important;height: 0;
             }
         }
     }
-    //音乐内关闭按钮
+    //Music inside off button
     .close{
         width: .14rem;
         height: .14rem;
@@ -572,7 +572,7 @@ width: 0 !important;height: 0;
         right: .16rem;
         cursor: pointer;
     }
-    //大音乐盒子
+    //max music box
     .musicMaxBox{
         display: none;
         position: fixed;
@@ -731,13 +731,13 @@ width: 0 !important;height: 0;
             }
         }
     }
-    //移动端上部
+    //Upper of mobile
     .mobileTopBox{
         width: 100%;
         margin-bottom: .06rem;
         box-shadow: 0px -2.06077px 17.86px rgba(0, 0, 0, 0.25);
     }
-    //移动端用户部分盒子
+    //Mobile user part box
     .moblieUser{
         display: flex;
         justify-content: space-between;
@@ -761,7 +761,7 @@ width: 0 !important;height: 0;
             border-radius: 50%;
         }
     }
-    //移动端nav部分盒子，即Not Started等三个按钮盒子
+    //the nav section box of mobile
     .navBox{
         margin: 0 .33rem;
         height: .6rem;
@@ -787,7 +787,7 @@ width: 0 !important;height: 0;
             color: #FF9A61;
         }
     }
-    //移动端筛选盒子
+    //Mobile screen box
     .mScreenBox{
         margin: 0 .33rem;
         display: flex;
@@ -817,7 +817,7 @@ width: 0 !important;height: 0;
             }
         }
     }
-    //移动端下方黄色菜单盒子
+    //Move the yellow menu box below the end
     .mobileMenuBox{
         position: fixed;
         bottom: .27rem;
@@ -825,7 +825,7 @@ width: 0 !important;height: 0;
         transform: translateX(-50%);
         z-index: 100;
     }
-    //移动端下方黄色菜单主要内容盒子
+    //Move the yellow menu below the main content box
     .mobileMenu{
         width: 1.15rem;
         height: .58rem;
@@ -868,7 +868,7 @@ width: 0 !important;height: 0;
              height: .26rem;
         }
     }
-    //移动端下方黄色菜单下灰色长条部分
+    //The gray strip under the yellow menu below the mobile terminal
     .mobileMenuGray{
         display: none;
         width: 1.31rem;
@@ -880,7 +880,7 @@ width: 0 !important;height: 0;
         left: -.09rem;
         z-index: -10;
     }
-    //移动端菜单收缩为小横条状态
+    //The mobile menu shrinks to a small bar state
     .mobileMenuBoxHide{
         bottom: .07rem;
         .mobileMenu{
@@ -895,7 +895,7 @@ width: 0 !important;height: 0;
             display: block;
         }
     }
-    //移动端小音乐盒子，仅音乐收缩在下方
+    //Mobile end small music box, only the music contraction in the bottom
     .mobileMusicBox{
         display: none;
         width:  calc(100% - .2rem);
@@ -974,7 +974,7 @@ width: 0 !important;height: 0;
             }
         }  
     }
-    //移动端大音乐盒子
+    //Big music box on mobile
     .mobileMusicMaxBox{
         width:  calc(100% - .46rem);
         height: calc(100vh - .98rem);
@@ -986,7 +986,7 @@ width: 0 !important;height: 0;
         box-shadow: 0px 0px 4px 1px rgba(0, 0, 0, 0.15);
         padding-bottom: .1rem;
     }
-    //移动端收缩到下方的内容盒子，包括音乐和时间任务
+    //The mobile side shrinks to the content box below, including music and time tasks
     .mobileBottomBox{
         display: none;
         // display: flex;
@@ -1032,7 +1032,7 @@ width: 0 !important;height: 0;
             }
         }
     }
-    //移动端时间任务盒子
+    //Mobile time task box
     .mobileTaskBox{
         display: none;
         width: 1.74rem;
@@ -1086,7 +1086,7 @@ width: 0 !important;height: 0;
             }
         }
     }
-    //移动端大的时间任务盒子
+    //max mobile time task box
     .clockMaxBox{
         display: none;
         // display: flex;
@@ -1161,11 +1161,11 @@ width: 0 !important;height: 0;
             }
         }
     }
-    //大的时间任务Stop Watch
+    //max time task Stop Watch
     .clockWatchBox{
         // display: flex;
     }
-    //大的时间任务Pomodoro
+    //max time task Pomodoro
     .clockPomodoroBox{
         // display: flex;
         .clockTime{
@@ -1194,7 +1194,7 @@ width: 0 !important;height: 0;
         }
         
     }
-    //移动端大音乐盒子内缩小按钮
+    //Shrink button in big music box on mobile terminal
     .narrow{
         width: .16rem;
         height: .16rem;
@@ -1203,7 +1203,7 @@ width: 0 !important;height: 0;
         right: .5rem;
         cursor: pointer;
     }
-    //移动端大时间任务内缩小按钮盒子
+    //Shrink button box in large time task on mobile terminal
     .clockMaxBox{
         .narrow{
             width: .25rem;
